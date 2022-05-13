@@ -7,7 +7,9 @@ N = 5
 Arr[] = {6, -3, -10, 0, 2}
 Output: 180
 
-
+https://practice.geeksforgeeks.org/problems/maximum-product-subarray3604/1#
+Method 1: Bruteforce --> O(N*N)
+Method 2: Using Pref, Suff --> O(N)
 */
 
 #include <bits/stdc++.h>
