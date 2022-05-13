@@ -10,6 +10,8 @@ Output: 1040
 
 Input: K = 1, N = 5, A = {100, 90, 80, 50, 25}
 Output: 0
+
+Method 1: Can be solved using DP O(N).
 */
 
 
