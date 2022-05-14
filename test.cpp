@@ -1,38 +1,31 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void print(int **arr, int m, int n ) {
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            cout << arr[i][j] << "\t";
-        }
-        cout << endl;
+void solve();
+
+int ZeroPairSum(int n, vector<int> arr){
+    return 1;
+}
+
+int main(){
+    cout << "main()" << endl;
+    int t;
+    cin >> t;        //input no. of test cases
+    while(t--){
+        solve();    //run this 't' times
     }
 }
 
-
-int main()
-{
-	int n, m;
-	cin >> n >> m;
-
-	int **arr = NULL;
-	arr = new int *[m];
-
-    for (int i = 0; i < m; i++) {
-        arr[i] = new int[n];
+void solve() {
+    cout << "solve" << endl;
+    int n;
+    cin >> n;
+    vector<int> arr;
+    for(int i=0; i<n; i++) {
+        cin >> arr[i];
     }
 
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            if ((i + j) % 2 == 0) {
-                arr[i][j] = 2*(i+j);
-            } else {
-                arr[i][j] = 3*(i+j);
-            }
-        }
-    }
+    cout << "solve 2" << endl;
 
-    print(arr, n, m);  
-    return 0;
+    cout << ZeroPairSum(n, arr) << endl;
 }

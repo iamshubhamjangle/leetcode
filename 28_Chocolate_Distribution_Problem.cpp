@@ -11,7 +11,8 @@ Output: 6
 Input: N = 7, M = 3, A = {7, 3, 2, 4, 9, 12, 56}
 Output: 2
 
-Method 1: Sort, then calculate diff a[i+m-1] - a[i]
+https://practice.geeksforgeeks.org/problems/chocolate-distribution-problem/0
+Method 1: Sort, then calculate diff a[i+m-1] - a[i]. time: O(N log N), space: O(1)
 */
 
 #include <bits/stdc++.h>
