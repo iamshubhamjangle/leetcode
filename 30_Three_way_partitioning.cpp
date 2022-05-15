@@ -15,7 +15,7 @@ Output: 1
 
 https://practice.geeksforgeeks.org/problems/three-way-partitioning/1#
 	- Method 1: sort the array O(N log N), space: O(1)
-    - Method 2:  Using two pointer approach
+    - Method 2:  Using two pointer approach, TC: O(N), space: O(1)
 
 */
 
@@ -32,12 +32,19 @@ public:
 
     // Method 2:  Using two pointer approach
    void threeWayPartition(vector<int>& arr,int a, int b) {
-	   int s=0,m=0,e=arr.size()-1;
-	   while(m<=e) {
-	       if(arr[m]<a) swap(arr[s++],arr[m++]);
-	       else if(arr[m]>=a && arr[m]<=b) m++;
-	       else swap(arr[m],arr[e--]);
-	   }
+        int l = 0;
+        int r = arr.size()-1;
+        int i = 0;
+
+        while(i <= r) {
+            if (arr[i] < a) {
+                swap(arr[l++], arr[i++]);
+            } else if(arr[i] >= a && arr[i] <= b) {
+                i++;
+            } else {
+                swap(arr[i], arr[r--]);
+            }
+        }
    }
 };
 
