@@ -8,6 +8,7 @@ Output :  1
 Input :  arr[ ] = {2, 7, 9, 5, 8, 7, 4}, K = 6 
 Output :   2 
 
+https://practice.geeksforgeeks.org/problems/minimum-swaps-required-to-bring-all-elements-less-than-or-equal-to-k-together4847/1
 Method 1: Bruteforce. TC: O(N*N), SC: O(1).
     - not solved yet
 
