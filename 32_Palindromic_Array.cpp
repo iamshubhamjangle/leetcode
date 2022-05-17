@@ -15,7 +15,7 @@ Output:
 
 https://practice.geeksforgeeks.org/problems/palindromic-array-1587115620/1
 Method 1: TC: O(n)
-	- looop through each element find rev of the num.
+	- loop through each element find rev of the num.
 	- if rev != arr[i] return 0; else return 1;
 */
 
