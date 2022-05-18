@@ -19,7 +19,7 @@ Output: 1
 
 https://practice.geeksforgeeks.org/problems/row-with-max-1s0023/1#
     - Method 1: Bruteforce O(N*M), space: O(1)
-    - Method 2: 
+    - Method 2: Travese from top right. TC: O(N+M), SC: O(1)
 
 
 */
