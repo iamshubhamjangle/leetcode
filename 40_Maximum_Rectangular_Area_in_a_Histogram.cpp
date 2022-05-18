@@ -80,25 +80,6 @@ class Solution {
  //        return res;
 	// }
 
-	// Method 3: Optimal TC: O(N), SC: O(N) 
-	long long getMaxArea(long long arr[], long long n) {
-      stack < int > st;
-      int maxA = 0;
-      for (int i = 0; i <= n; i++) {
-        while (!st.empty() && (i == n || arr[st.top()] >= arr[i])) {
-          int height = arr[st.top()];
-          st.pop();
-          int width;
-          if (st.empty())
-            width = i;
-          else
-            width = i - st.top() - 1;
-          maxA = max(maxA, width * height);
-        }
-        st.push(i);
-      }
-      return maxA;
-    }
 };
 
 int main()
