@@ -12,8 +12,8 @@ M[][] = {{0 1 1 0},
 Output: 8
 
 https://practice.geeksforgeeks.org/problems/max-rectangle/1
-    - Method 1: use maxHistogram - TC: O(m*n), SC: O(N)
-        - use maxHistogram to solve by adding each row and calulating maxArea
+Method 1: use maxHistogram - TC: O(m*n), SC: O(N)
+    - use maxHistogram to solve by adding each row and calulating maxArea
 
 
 */
@@ -24,6 +24,8 @@ using namespace std;
 
 class Solution{
   public:
+    // Method 1: use maxHistogram - TC: O(m*n), SC: O(N)
+    // - use maxHistogram to solve by adding each row and calulating maxArea
     int maxHistogram(int arr[], int n) {
         vector<int> l(n), r(n);
         stack<int> st;
