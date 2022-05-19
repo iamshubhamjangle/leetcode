@@ -1,5 +1,5 @@
 /*
-Rotate_by_90_degree.cpp
+Rotate_by_90_degree_ACW.cpp
 
 Given a square matrix[][] of size N x N. The task is to rotate it by 90 degrees in an anti-clockwise direction without using any extra space.
 
@@ -28,6 +28,7 @@ void rotate (vector<vector<int> >& matrix);
  to change it in place without using extra space */
 
 // Method 1: swap and reverse. TC: O(N*N), SC: O(1) 
+// // Rotate ACW
 // void rotate(vector<vector<int> >& matrix) {
 // 	int n = matrix.size();
 // 	for(int i=0; i<n; i++) {
