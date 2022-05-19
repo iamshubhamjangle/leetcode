@@ -1,5 +1,5 @@
 /*
-Kth_element_in_Matrix.cpp
+Kth_smallest_element_in_Matrix.cpp
 
 Given a N x N matrix, where every row and column is sorted in non-decreasing order. 
 Find the kth smallest element in the matrix.
@@ -23,7 +23,9 @@ K = 7
 Output: 30
 
 -----------------------------------------------
-Method 1: 
+https://practice.geeksforgeeks.org/problems/kth-element-in-matrix/1
+Method 1: Vector + sort. TC: O(N*M), SC: O(N+M)
+Method 2: Max Heap, TC- O(n*n(logk)) , SC - O(k)
 
 
 */
