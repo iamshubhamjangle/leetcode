@@ -3,6 +3,15 @@ using namespace std;
 
 /*
 Reverse an Array
+
+Example 1:
+Input:
+1
+4
+1 2 3 4
+Output:
+4 3 2 1
+
 Method 1: time: O(N), space: O(1)
 	- Keep two integer position start & end
 	- while(start < end) swap both elements at start and end
@@ -22,6 +31,10 @@ Method 3:
 	2- By using this statement x = (INT_MIN/INT_MAX), we get -1 in a variable x. 
 	3- As INT_MIN and INT_MAX have same values just of opposite signs, so on dividing them it will give -1. 
 	4- Then ‘x’ can be used in decrementing the index from last.
+
+https://practice.geeksforgeeks.org/problems/reverse-an-array/0
+
+
 */
 
 void solve();

@@ -6,6 +6,7 @@ A[] = {3, 2, 1, 56, 10000, 167}
 Output:
 min = 1, max =  10000
 
+https://practice.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1
 Method 1: time: O(N), space: O(1)
 	- assign min & max to first element
 	- loop through array and check if element is greater/less then min & max. 

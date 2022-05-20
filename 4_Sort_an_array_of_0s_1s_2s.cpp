@@ -1,6 +1,8 @@
 /*
 Sort an array of 0s, 1s and 2s
 
+https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/1
+
 Method 1: Use temp array. time: O(N), space = O(N)
     - loop through array 3 times
     - first time if value == 0, add it to temp array
