@@ -1,10 +1,33 @@
 /*
 Union_of_two_arrays - find the count for merged (union) arrays and ignore duplicates
+
+Given two arrays a[] and b[] of size n and m respectively. The task is to find union between these two arrays.
+
+Union of the two arrays can be defined as the set containing distinct elements from both the arrays. 
+If there are repetitions, then only one occurrence of element should be printed in the union.
+
+Input:
+5 3
+1 2 3 4 5
+1 2 3
+Output: 
+5
+
+Input:
+6 2 
+85 25 1 32 54 6
+85 2 
+Output: 
+7
+
+https://practice.geeksforgeeks.org/problems/union-of-two-arrays3538/1
+
 Method 0: merge a,b -> sort -> compare - time: O(N log N), space: O(N)
 	- merge a,b into c. sort c. 
 	- compare adjacent elements and increase the count if(adjacent are not equal)
 Method 1: unordered_set  time: O(N), space O(N) 
 	- use unordered_set, add all the elements and return the count
+
 */
 
 #include <bits/stdc++.h>
