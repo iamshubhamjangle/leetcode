@@ -1,7 +1,24 @@
 /*
 Stock_buy_and_sell.cpp
 
+The cost of stock on each day is given in an array A[] of size N. Find all the days on which you buy and sell the stock so that in between those days your profit is maximum.
+Note: There may be multiple possible solutions. Return any one of them. Any correct solution will result in an output of 1, whereas wrong solutions will result in an output of 0.
+
+Input:
+N = 7
+A[] = {100,180,260,310,40,535,695}
+Output:
+1
+
+Input:
+N = 5
+A[] = {4,2,2,2,4}
+Output:
+1
+
+https://practice.geeksforgeeks.org/problems/stock-buy-and-sell-1587115621/1
 Method 1: loop to check the prices and buy/sell - time: O(N), space: O(N)
+
 */
 
 #include <bits/stdc++.h>

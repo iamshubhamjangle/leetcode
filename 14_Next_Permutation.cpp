@@ -1,16 +1,21 @@
 /*
 Next_Permutation 
 
+Implement the next permutation, which rearranges the list of numbers into Lexicographically 
+next greater permutation of list of numbers. If such arrangement is not possible, 
+it must be rearranged to the lowest possible order i.e. sorted in an ascending order. 
+You are given an list of numbers arr[] of size N.
+
 Input: N = 6
 arr = {1, 2, 3, 6, 5, 4}
 Output: {1, 2, 4, 3, 5, 6}
 
-Method 1: find idx1, idx2, swap, reverse. time: O(N), space: O(1)
-	- find idx1 = loop until arr[i] < arr[i+1]
-	- if idx1 == -1, reverse and return;
-	- find idx2 = loop until arr[idx1] < arr[i]
-	- swap idx1, idx2
-	- reverse idx1 + 1, end
+https://practice.geeksforgeeks.org/problems/next-permutation5226/1
+
+Method 1:  time: O(N), space: O(1)
+    - find arr[i-1] < arr[i] from reverse.
+    - reverse(arr[i], arr[n-1]);
+    - while(l >= 0 && r < N){ if(arr[r] > arr[r]) {swap(arr[i], arr[i+1]); break;} r++}
 
 */
 
@@ -21,42 +26,20 @@ using namespace std;
 
 class Solution{
 public:
-    vector<int> nextPermutation(int n, vector<int> arr){
-        if(n <= 1) {
-        	return arr;
+    vector<int> nextPermutation(int N, vector<int> arr){
+        int i = N - 1;
+        while(i > 0 && arr[i] <= arr[i - 1]){
+            i--;
         }
-
-        int idx1 = -1;
-        int idx2 = -1;
-
-        for(int i=n-2; i>=0; i--) {
-        	// cout << "is " << arr[i] << " < " << arr[i+1] << endl; 
-        	if(arr[i] < arr[i+1]) {
-        		idx1 = i;
-        		break;
-        	}
+        reverse(arr.begin() + i, arr.end());
+        int l = i - 1, r = i;
+        while(l >= 0 && r < N){
+            if(arr[r] > arr[l]){
+                swap(arr[l], arr[r]);
+                break;
+            }
+            r++;
         }
-
-        // cout << "idx1: " << idx1 << endl;
-
-        if(idx1 == -1) {
-        	reverse(arr.begin(), arr.end());
-        	return arr;
-        }
-
-        for(int i=n-1; i>idx1; i--) {
-        	if(arr[idx1] < arr[i]) {
-        		idx2 = i;
-        		break;
-        	}
-        }
-
-        // cout << "idx1: " << idx1 << " idx2: " << idx2 << endl;
-
-        swap(arr[idx1], arr[idx2]);
-
-        reverse(arr.begin() + idx1 + 1, arr.end());
-
         return arr;
     }
 };

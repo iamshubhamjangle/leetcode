@@ -1,7 +1,21 @@
 /*
 Kadane's Algorithm -  contiguous sub-array(containing at least one number) which has the maximum sum
-// Method 1: bruteforce	
-// Method 2: currsum, maxsum = INT_MIN
+
+Input:
+N = 5
+Arr[] = {1,2,3,-2,5}
+Output:
+9
+
+Input:
+N = 4
+Arr[] = {-1,-2,-3,-4}
+Output:
+-1
+
+https://practice.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1
+    Method 1: bruteforce	
+    Method 2: currsum, maxsum = INT_MIN
 	
 */
 

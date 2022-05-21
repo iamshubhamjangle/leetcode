@@ -1,8 +1,7 @@
 /*
 Overlapping_Intervals
-Method 1: sort, put in stack then compare then return time: O(N log N), space: O(N)
-Method 2: sort, Compare within array and push_back() or replace existing value time: O(N logN), space: O(1)
 
+Given a collection of Intervals, the task is to merge all of the overlapping Intervals.
 
 Input 1:
 Intervals = {{1,3},{2,4},{6,8},{9,10}}
@@ -11,6 +10,10 @@ Output: {{1, 4}, {6, 8}, {9, 10}}
 Input 2:
 Intervals = {{6,8},{1,9},{2,4},{4,7}}
 Output: {{1, 9}}
+
+https://practice.geeksforgeeks.org/problems/8a644e94faaa94968d8665ba9e0a80d1ae3e0a2d/1
+Method 1: sort, put in stack then compare then return TC: O(N log N), SC: O(N)
+Method 2: sort, Compare within array and push_back() or replace existing value TC: O(N logN), SC: O(1)
 
 */
 

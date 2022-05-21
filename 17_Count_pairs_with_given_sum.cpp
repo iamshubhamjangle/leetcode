@@ -1,6 +1,18 @@
 /*
 Count_pairs_with_given_sum.cpp
 
+Given an array of N integers, and an integer K, find the number of pairs of elements in the array whose sum is equal to K.
+
+Input:
+N = 4, K = 6
+arr[] = {1, 5, 7, 1}
+Output: 2
+
+Input:
+N = 4, K = 2
+arr[] = {1, 1, 1, 1}
+Output: 6
+
 https://practice.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1
 Method 1: Bruteforce - time: O(N*N), space: O(1)
 Method 2: Using sorting - time: O(N log N)

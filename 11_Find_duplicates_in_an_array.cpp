@@ -1,6 +1,21 @@
 /*
 Find_duplicates_in_an_array
-	Method 1: using map. time: O(N log N), space: 2 * O(N) 
+
+Given an array a[] of size N which contains elements from 0 to N-1, 
+you need to find all the elements occurring more than once in the given array.
+
+Input:
+N = 4
+a[] = {0,3,1,2}
+Output: -1
+
+Input:
+N = 5
+a[] = {2,3,1,2,3}
+Output: 2 3 
+
+https://practice.geeksforgeeks.org/problems/find-duplicates-in-an-array/1
+	Method 1: using map. time: O(N), space: 2 * O(N) 
 	Method 2: O(N log N), space: O(N) 
     	- sort() and (arr[i] == arr[i+1] && num != arr[i+1])
 */
