@@ -1,6 +1,17 @@
 /*
 Cyclically_rotate_an_array_by_one 
+
+Given an array, rotate the array by one position in clock-wise direction.
+
+Input:
+N = 5
+A[] = {1, 2, 3, 4, 5}
+Output:
+5 1 2 3 4
+
+https://practice.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one/0
 Method 1: Use temp var and loop over and replace. time = O(N), space: O(1)
+
 */
 
 #include <stdio.h>
@@ -35,11 +46,3 @@ void rotate(int arr[], int n)
 	}
 	arr[j] = lastValue;
 }
-
-// void rotate(int arr[], int n)
-// {
-//     for(int i=n-1;i>0;i--)
-//     {
-//         swap(arr[i],arr[i-1]);
-//     }
-// }
