@@ -41,7 +41,7 @@ public:
  //    }
 
 	int getPairsCount(int arr[], int n, int k) {
-	 //2- using Urting - complexity-O(nlogn) for sorting + O(n) for loop ~= O(nlogn)
+	 //2- using sorting - complexity-O(nlogn) for sorting + O(n) for loop ~= O(nlogn)
 
 	    // int left=0;
 	    // int right=n-1;

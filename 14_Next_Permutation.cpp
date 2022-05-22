@@ -15,8 +15,7 @@ https://practice.geeksforgeeks.org/problems/next-permutation5226/1
 Method 1:  time: O(N), space: O(1)
     - find arr[i-1] < arr[i] from reverse.
     - reverse(arr[i], arr[n-1]);
-    - while(l >= 0 && r < N){ if(arr[r] > arr[r]) {swap(arr[i], arr[i+1]); break;} r++}
-
+    - while(l >= 0 && r < N){ if(arr[r] > arr[l]) {swap(arr[i], arr[i+1]); break;} r++}
 */
 
 

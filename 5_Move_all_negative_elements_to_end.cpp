@@ -52,12 +52,12 @@ class Solution{
     	int j = n-1;
 
     	while(i<j) {
-    		if(arr[j] < 0) {
-    			j--;
-    			continue;
-    		}
     		if(arr[i] >= 0) {
     			i++;
+    			continue;
+    		}
+    		if(arr[j] < 0) {
+    			j--;
     			continue;
     		}
     		swap(arr[i], arr[j]);
