@@ -12,6 +12,8 @@ Input : Str = "aab"
 Output: 4
 
 https://practice.geeksforgeeks.org/problems/count-palindromic-subsequences/1
+    - Method 1: Using Recursion. O(N*2^n). SC: O(1)
+    - Method 2: Use DP to reduce overlapping recusive problems. O(N*N). SC: O(1)
 
 */
 
@@ -40,6 +42,7 @@ class Solution{
     //     return helper(str, i, j);
     // }
 
+    // Method 2: Use DP to reduce overlapping recusive problems. O(N*2^n). SC: O(1)
     // If we draw recursion tree of above recursive solution, 
     // we can observe overlapping Subproblems. Since the problem has overlapping 
     // subproblems, we can solve it efficiently using Dynamic Programming. 
