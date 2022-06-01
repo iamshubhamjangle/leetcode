@@ -19,6 +19,11 @@ Input:
 			{e,b,e,b}}	
 	word = "abe"
 Output: {{0,0},{0,2},{1,0}}
+
+https://practice.geeksforgeeks.org/problems/find-the-string-in-grid0111/1#
+Method 1 - Recursion in all/one direction and backtrack - O(N*M*K)
+loop through the matrix. If curr[i][j] = word[idx] we have found first word.
+increase the idx. and recur in all 8 direction. pass a extra direction param to know which direction to recur.
 */
 
 #include<bits/stdc++.h>
