@@ -13,6 +13,7 @@ S = "zoomlazapzo"
 P = "oza"
 Output: apzo
 
+<<<<<<< HEAD
 https://practice.geeksforgeeks.org/problems/smallest-window-in-a-string-containing-all-the-characters-of-another-string-1587115621/1#
     // Method 1: Sliding window technique. TC: O(N), SC: O(N)
 
@@ -102,6 +103,21 @@ int main()
 
 
 /*
+=======
+*/
+
+// { Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
+
+
+ // } Driver Code Ends
+class Solution
+{
+    public:
+    //Function to find the smallest window in the string s consisting
+    //of all the characters of string p.
+>>>>>>> 8efd1f843c7e7e5da77a292dd0f093ab72bf9f90
     string smallestWindow (string s, string p)
    {
        // Your code here
@@ -157,16 +173,51 @@ int main()
        }
        
        string ans="";
+<<<<<<< HEAD
        if(mi==INT_MAX) {
            return "-1";
        }
        else {
+=======
+       if(mi==INT_MAX)
+       {
+           return "-1";
+       }
+       else
+       {
+>>>>>>> 8efd1f843c7e7e5da77a292dd0f093ab72bf9f90
            for(int i=start;i<=end;i++)
            {
                ans=ans+s[i];
            }
            return ans;
        }
+<<<<<<< HEAD
    }
 };
 */
+=======
+       
+       
+       
+   }
+};
+
+// { Driver Code Starts.
+int main()
+ {
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        cin>>s;
+        string pat;
+        cin>>pat;
+        Solution obj;
+        cout<<obj.smallestWindow(s, pat)<<endl;
+        
+    }
+	return 0;
+}  // } Driver Code Ends
+>>>>>>> 8efd1f843c7e7e5da77a292dd0f093ab72bf9f90
