@@ -23,3 +23,9 @@ Graphs 					:
 Heaps 					: 
 Trie 					: 
 ```
+
+Todo:
+	- Binary Search
+	- Selection Sort
+	- Bubble Sort
+	- Insertion Sort
