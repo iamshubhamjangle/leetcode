@@ -11,10 +11,13 @@ Input : N = 5, Ar1[] = {1, 12, 15, 26, 38}, Ar2[] = {2, 13, 17, 30, 45}
 Output: 32
 
 https://practice.geeksforgeeks.org/problems/sum-of-middle-elements-of-two-sorted-arrays2305/1
+<<<<<<< HEAD
     - Method 1: two pointer diagonal merge & sort arr2. TC: N*NlogN. SC: O(1)
     - Method 2: using two pointer merge to new array. TC: O(N+M) SC: O(N)
     - Method 3: using two pointer and count. TC: O(N+M) SC: O(1)
      -Method 4: Binary Search. TC: O(logN). SC: O(1)
+=======
+>>>>>>> 5fac3bd564af8bcdefc5ca91d36aca04e85c188f
 
 */
 
@@ -24,7 +27,11 @@ using namespace std;
 
 class Solution {
 public:
+<<<<<<< HEAD
     // Method 1: two pointer diagonal merge & sort arr2. TC: N*NlogN. SC: O(1)
+=======
+    // Method 1: two pointer merge TC: NlogN. SC: O(1)
+>>>>>>> 5fac3bd564af8bcdefc5ca91d36aca04e85c188f
     int findMidSum1(int arr1[], int arr2[], int n) {
         int i = n-1;
         int j = 0;
@@ -42,6 +49,7 @@ public:
         return arr1[n-1] + arr2[0];
     }
 
+<<<<<<< HEAD
     // Method 2: using two pointer merge to new array. TC: O(N+M) SC: O(N)
     int findMidSum2(int arr1[], int arr2[], int n) {
         vector<int> ans;
@@ -110,6 +118,30 @@ public:
             j++;
         }
 
+=======
+    int findMidSum(int arr1[], int arr2[], int n) {
+        int i=0;
+        int j=0;
+        int idx = (2*n)/2;  //so our median will be arr[idx] + arr[idx+1]
+        int sum = 0;
+        int count = 0;
+
+        while(count <= idx) {
+            if(arr1[i] <= arr2[j]) {
+                if(count == idx-1 || count == idx) {
+                    sum += arr1[i];
+                }
+                i++;
+                count++;
+            } else {
+                if(count == idx-1 || count == idx) {
+                    sum += arr2[j];
+                }
+                j++;
+                count++;
+            }
+        }
+>>>>>>> 5fac3bd564af8bcdefc5ca91d36aca04e85c188f
         return sum;
     }
 };
@@ -129,7 +161,11 @@ int main() {
         }
         Solution ob;
         auto ans = ob.findMidSum(ar1, ar2, n);
+<<<<<<< HEAD
         cout << "ans: " << ans << "\n";
+=======
+        cout << ans << "\n";
+>>>>>>> 5fac3bd564af8bcdefc5ca91d36aca04e85c188f
     }
     return 0;
 }

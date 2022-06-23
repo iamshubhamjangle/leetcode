@@ -10,7 +10,7 @@ int ZeroPairSum(int n, vector<int> arr){
 int main(){
     cout << "main()" << endl;
     int t;
-    cin >> t;        //input no. of test cases
+    cin >> t;
     while(t--){
         solve();    //run this 't' times
     }
