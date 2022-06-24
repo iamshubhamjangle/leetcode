@@ -61,24 +61,18 @@ using namespace std;
 // Step2: Iterate through nums1, if NGE exist in umap push its value in vector
 	// if doesnt exist push -1 to vector
 vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
-	stack<int> s;
-	unordered_map<int, int> umap;
-	vector<int> ans;
-
-	// Step 1
-	for(auto i: nums2) {
-		while(!s.empty() && s.top() < i) {
-			umap[s.top()] = i;
-			s.pop();
-		}
-		s.push(i);
-	}
-
-	// Step 2
-	for(auto i: nums1) 
-		ans.push_back(umap[i] > 0 ? umap[i] : -1);
-
-	return ans;
+	vector<int> dailyTemperatures(vector<int>& T) {
+        stack<int> s;
+        vector<int> ans(size(T));
+        for(int cur = 0; cur < size(T); cur++) {
+            while(size(s) and T[cur] > T[s.top()]) {    // pop till current temp < stack's top's temp. This maintains monotonic stack
+                ans[s.top()] = cur - s.top();           // cur day will be next warmer day for each element that's popped
+                s.pop();
+            }
+            s.push(cur);                                // push onto stack to find next warmer day for cur later on
+        }
+        return ans;
+    }
 }
 
 void solve();

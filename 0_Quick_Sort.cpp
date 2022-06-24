@@ -1,53 +1,55 @@
-// Quick_Sort.cpp
+// Quick sort in C++
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-void swap(int* a, int* b) {
-	int t = *a;
-	*a = *b;
-	*b = t;
+void swap(int *a, int *b) {
+  int t = *a;
+  *a = *b;
+  *b = t;
 }
 
-int partition (int arr[], int low, int high) {
-	int pivot = arr[high]; // pivot
-	int i = (low - 1); // Index of smaller element and indicates the right position of pivot found so far
-
-	for (int j = low; j <= high - 1; j++) {
-		// If current element is smaller than the pivot
-		if (arr[j] < pivot) {
-			i++; // increment index of smaller element
-			swap(&arr[i], &arr[j]);
-		}
-	}
-	swap(&arr[i + 1], &arr[high]);
-	return (i + 1);
+void printArray(int array[], int size) {
+  int i;
+  for (i = 0; i < size; i++)
+    cout << array[i] << " ";
+  cout << endl;
 }
 
-/* The main function that implements QuickSort
-arr[] --> Array to be sorted,
-low --> Starting index,
-high --> Ending index */
-void quickSort(int arr[], int low, int high) {
-	if (low < high) {
-		int pi = partition(arr, low, high);
-		quickSort(arr, low, pi - 1);
-		quickSort(arr, pi + 1, high);
-	}
+// function to rearrange array (find the partition point)
+int partition(int array[], int low, int high) {
+  int pivot = array[high];
+  int i = (low - 1);
+
+  for (int j = low; j < high; j++) {
+    if (array[j] <= pivot) {
+      i++;
+      swap(&array[i], &array[j]);
+    }
+  }
+  
+  swap(&array[i + 1], &array[high]);
+  return (i + 1);
 }
 
-void printArray(int arr[], int size) {
-	int i;
-	for (i = 0; i < size; i++)
-		cout << arr[i] << " ";
-	cout << endl;
+void quickSort(int array[], int low, int high) {
+  if (low < high) {
+    int pi = partition(array, low, high);
+    quickSort(array, low, pi - 1);
+    quickSort(array, pi + 1, high);
+  }
 }
 
+// Driver code
 int main() {
-	int arr[] = {10, 7, 8, 9, 1, 5};
-	int n = sizeof(arr) / sizeof(arr[0]);
-	quickSort(arr, 0, n - 1);
-	cout << "Sorted array: \n";
-	printArray(arr, n);
-	return 0;
+  int data[] = {8, 7, 6, 1, 0, 9, 2};
+  int n = sizeof(data) / sizeof(data[0]);
+  
+  cout << "Unsorted Array: \n";
+  printArray(data, n);
+  
+  quickSort(data, 0, n - 1);
+  
+  cout << "Sorted array in ascending order: \n";
+  printArray(data, n);
 }
