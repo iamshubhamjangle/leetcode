@@ -1,5 +1,12 @@
 // Heap_Sort.cpp
 // C++ program for implementation of Heap Sort
+/*
+
+TC: N log N
+SC: O(1)
+*/
+
+
 #include <iostream>
 using namespace std;
 

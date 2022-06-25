@@ -16,6 +16,8 @@ Input: temperatures = [30,60,90]
 Output: [1,1,0]
 
 https://leetcode.com/problems/daily-temperatures/
+Method 1: Bruteforce  TLE - bruteforce: TC: O(N*N) SC: O(N)
+Method 2: Reverse Iterate TC: O(N) SC: O(N)
 */
 #include <bits/stdc++.h>
 using namespace std;

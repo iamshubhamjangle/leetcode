@@ -1,4 +1,12 @@
+/*
 // Quick sort in C++
+TC: 
+  Worst O(n * n)
+  Average O(n*log n)
+SC: 
+  O(log n)
+
+*/
 
 #include <iostream>
 using namespace std;
