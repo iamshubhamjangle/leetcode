@@ -1,4 +1,4 @@
-/*
+    /*
 Majority_Element.cpp
 
 Given an array A of N elements. Find the majority element in the array. 

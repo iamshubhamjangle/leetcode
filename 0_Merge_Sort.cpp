@@ -1,7 +1,9 @@
+/*
 // Merge sort in C++
+TC: N log N
+SC: O(N)
 
-
-
+*/
 
 #include <iostream>
 using namespace std;
