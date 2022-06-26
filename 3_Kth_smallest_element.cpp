@@ -32,29 +32,26 @@ Method 3: Quickselect Algorithm - O(n)
 #include<bits/stdc++.h>
 using namespace std;
 
-// class Solution{
-//     public:
-//     int kthSmallest(int arr[], int l, int r, int k) {
-//       sort(arr, arr + r + 1);
-//       return arr[k-1];
-//     }
-// };
-
-// C++ Easy solution using a priority_queue, Min Heap 
-// Time O(N) -- building head + O(KlogN) --- heapifying
 class Solution{
     public:
-    // int kthSmallest(int arr[], int l, int r, int k) {
-    //   priority_queue<int,vector<int>, greater<int>> pq;
-    //    for(int i=l;i<=r; i++){
-    //        pq.push(arr[i]);
-    //    }    //push all element to pq
-    //    for(int i=1;i<k;i++){
-    //        pq.pop();
-    //    }    //pop elements k times
-    //    int ans=pq.top();    // k+1th element will be the answer
-    //    return ans;
-    // }
+    int kthSmallest(int arr[], int l, int r, int k) {
+      sort(arr, arr + r + 1);
+      return arr[k-1];
+    }
+
+// Time O(N) -- building heap + O(KlogN) --- heapifying
+// C++ Easy solution using a priority_queue, Min Heap 
+    int kthSmallest(int arr[], int l, int r, int k) {
+      priority_queue<int,vector<int>, greater<int>> pq;
+       for(int i=l;i<=r; i++){
+           pq.push(arr[i]);
+       }    //push all element to pq
+       for(int i=1;i<k;i++){
+           pq.pop();
+       }    //pop elements k times
+       int ans=pq.top();    // k+1th element will be the answer
+       return ans;
+    }
 };
 
 int main()
