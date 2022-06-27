@@ -15,26 +15,37 @@ https://practice.geeksforgeeks.org/problems/bubble-sort/1
 	Method 1: TC: O(N-2 * N) SC: O(N)
         - while (n >= 0) swap if i > i+1
 */
-
-// void swap2(int &a, int &b) {
-// 	int temp = move( a );   
-// 	a = move(b);       
-// 	b = move(temp);
-// }
-
 #include <bits/stdc++.h>
 using namespace std;
+
+void mySwap2(int &a, int &b) {
+	int temp = move(a);   
+	a = move(b);       
+	b = move(temp);
+}
+
+void mySwap(int a[], int i, int j) {
+    int temp = a[i];
+    a[i] = a[j];
+    a[j] = temp;
+}
 
 class Solution {
     public:
     void bubbleSort(int arr[], int n) {
-    	while(n >= 0) {
-    		for(int i=0; i<=n-2; i++) {
-    			if(arr[i] > arr[i+1])
-    				swap(arr[i], arr[i+1]);
-    		}
-    		n--;
-    	}
+        for(int i=0; i<n-1; i++) {
+            bool swapped = false;
+            for(int j=0; j<n-i-1; j++) {
+                if(arr[j] > arr[j+1]) {
+                    swapped = true;
+                    swap(arr[j], arr[j+1]);
+                    // mySwap(arr, j, j+1);
+                    // mySwap2(arr[j], arr[j+1]);
+                }
+            }
+            if(!swapped)
+                break;
+        }
     }
 };
 
