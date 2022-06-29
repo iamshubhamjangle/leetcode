@@ -8,6 +8,11 @@ Input:
 str1: abcdefgh
 str2: mnopabcd
 Output: mnop
+
+https://www.geeksforgeeks.org/find-all-characters-in-given-string-which-are-not-present-in-other-string/
+	- Bruteforce: TC: O(N*M). SC: O(N) 
+	- Method 2: Using unordered map TC: O(N) SC: O(N)
+	- Custom hash function TC: O(N) SC: O(N)
 */
 
 #include <bits/stdc++.h>
