@@ -12,6 +12,10 @@ Output:
 2 2 3
 
 https://practice.geeksforgeeks.org/problems/common-elements5420/1
+    - Method 1: Bruteforce. TC: O(M*N) SC: O(N)
+    - Method 2: Sorting. TC: O(NlogN) SC: O(N)
+    - Method 3: Sort and Binary Search. TC: O(NlogN) SC: O(N)
+
 Method 1: Bruteforce. TC: O(M*N) SC: O(N)
 - iterate through v1
 - for each element, check if same element exist in v2
