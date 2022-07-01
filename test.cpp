@@ -1,31 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void solve();
+void solve() {
+    unordered_map<int, int> um;
 
-int ZeroPairSum(int n, vector<int> arr){
-    return 1;
+    um[1]++;
+    um[2]++;
+    um[2]++;
+    um[3]++;
+    um[4]++;
+    cout << "size: "<< um.size() << endl;
+    um[3]--;
+    cout << "size: "<< um.size() << endl;
 }
 
 int main(){
-    cout << "main()" << endl;
     int t;
     cin >> t;
     while(t--){
         solve();    //run this 't' times
     }
-}
-
-void solve() {
-    cout << "solve" << endl;
-    int n;
-    cin >> n;
-    vector<int> arr;
-    for(int i=0; i<n; i++) {
-        cin >> arr[i];
-    }
-
-    cout << "solve 2" << endl;
-
-    cout << ZeroPairSum(n, arr) << endl;
 }
