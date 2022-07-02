@@ -82,6 +82,22 @@ vector<int> find(int arr[], int n , int x ) {
 }
 
 
+// Method 3: Using STL binary_search TC: O(log n) SC: O(1)
+vector<int> find(int arr[], int n , int x ) {
+    // edge case if x dont exist in arr
+    if(!binary_search(arr, arr+n, x))
+        return {-1,-1};
+    
+    int first = -1;
+    int last = -1;
+    
+    first = lower_bound(arr, arr+n, x) - arr;
+    last = upper_bound(arr, arr+n, x) - arr - 1;
+    
+    return {first, last};
+}
+
+
 int main() {
     int t;
     cin>>t;
