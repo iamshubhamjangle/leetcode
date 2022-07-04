@@ -52,3 +52,49 @@ ListNode* reverseKGroup(ListNode* head, int k) {
 	s->next = nextHead;
 	return e;	// e will be the new node
 }
+
+
+// ===================== Iterative =================== //
+void reverse(ListNode* s, ListNode* e) {
+	// after reverse e will be the head;
+	ListNode *p = NULL;
+	ListNode *c = s;
+	ListNode *n = s->next;
+
+	while(p != e) {
+		c->next = p;
+		p = c;
+		c = n;
+		if(n != NULL) n = n->next;
+	}
+}
+
+// Method 2: Iterative - space optimized. TC: O(N) SC: O(1)
+ListNode* reverseKGroup(ListNode* head, int k) {
+    if(head == NULL|| head->next == NULL || k==1)
+        return head;
+    ListNode* dummy = new ListNode(-1);
+    dummy->next = head;		// new head
+	ListNode* beforeStart = dummy;
+	ListNode* e = head;
+	
+	int i = 0;
+	while(e != NULL) {
+		i++;
+		if(i%k == 0) {	// is end at correct position as per k
+			// reverse the range s - e
+			ListNode* s = beforeStart -> next;
+			ListNode* temp = e -> next;
+			reverse(s, e);	// custom reverse function
+			beforeStart -> next = e;
+			s -> next = temp;
+
+			beforeStart = s;
+			e = temp;
+		} else {
+			e = e->next;
+		}
+	}
+
+	return dummy -> next;
+}
