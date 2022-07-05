@@ -38,73 +38,73 @@ public:
         }
 	}
 
-    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-    	return merge(l1, l2);
-    }
+  ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+  	return merge(l1, l2);
+  }
 
 
-    // // Iterative - 1
-    // ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-    // 	if(l1==NULL) return l2;
-    // 	if(l2==NULL) return l1;
-    // 	ListNode* ans;
-    // 	ListNode* tail;
+  // // Iterative - 1
+  ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+  	if(l1==NULL) return l2;
+  	if(l2==NULL) return l1;
+  	ListNode* ans;
+  	ListNode* tail;
 
-    // 	if(l1->val < l2->val) {
-    // 		ans = l1;
-    // 		tail = l1;
-    // 		l1 = l1->next;
-    // 	} else {
-    // 		ans = l2;
-    // 		tail = l2;
-    // 		l2 = l2->next;
-    // 	}
+  	if(l1->val < l2->val) {
+  		ans = l1;
+  		tail = l1;
+  		l1 = l1->next;
+  	} else {
+  		ans = l2;
+  		tail = l2;
+  		l2 = l2->next;
+  	}
 
-    // 	while(l1 != NULL && l2 != NULL) {
-    // 		if(l1->val < l2->val) {
-    // 			tail->next = l1;
-    // 			tail = l1;
-    // 			l1 = l1->next;
-    // 		} else {
-    // 			tail->next = l2;
-    // 			tail = l2;
-    // 			l2 = l2->next;
-    // 		}
-    // 	}
+  	while(l1 != NULL && l2 != NULL) {
+  		if(l1->val < l2->val) {
+  			tail->next = l1;
+  			tail = l1;
+  			l1 = l1->next;
+  		} else {
+  			tail->next = l2;
+  			tail = l2;
+  			l2 = l2->next;
+  		}
+  	}
 
-    // 	if(l1 == NULL) 
-    // 		tail->next = l2;
-    // 	else 
-    // 		tail->next = l1;
-    
-    // 	return ans;
-    // }
+  	if(l1 == NULL) 
+  		tail->next = l2;
+  	else 
+  		tail->next = l1;
+  
+  	return ans;
+  }
 
 
-    // Iterative TC: O(N) SC: O(1)
-    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-    	if(l1==NULL) return l2;
-    	if(l2==NULL) return l1;
-    	ListNode* ans = new ListNode(-1);
-    	ListNode* tail = ans;
+  // Iterative 2, TC: O(N) SC: O(1)
+  ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+  	if(l1==NULL) return l2;
+  	if(l2==NULL) return l1;
+  	ListNode* ans = new ListNode(-1);
+  	ListNode* tail = ans;
 
-    	while(l1 != NULL && l2 != NULL) {
-    		if(l1->val < l2->val) {
-    			tail->next = l1;
-    			tail = l1;
-    			l1 = l1->next;
-    		} else {
-    			tail->next = l2;
-    			tail = l2;
-    			l2 = l2->next;
-    		}
-    	}
+  	while(l1 != NULL && l2 != NULL) {
+  		if(l1->val < l2->val) {
+  			tail->next = l1;
+  			tail = l1;
+  			l1 = l1->next;
+  		} else {
+  			tail->next = l2;
+  			tail = l2;
+  			l2 = l2->next;
+  		}
+  	}
 
-    	if(l1 == NULL) 
-    		tail->next = l2;
-    	else 
-    		tail->next = l1;
-    
-    	return ans->next;
-    }
+  	if(l1 == NULL) 
+  		tail->next = l2;
+  	else 
+  		tail->next = l1;
+  
+  	return ans->next;
+  }
 };
