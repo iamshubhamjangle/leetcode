@@ -56,6 +56,8 @@ public:
             slow = slow->next;
             fast = fast->next->next;
             if(fast == slow) return true;
+            // At this point fast=slow will be pointing to a common point in loop,
+            // not neccesary it is at cycle beginning
         }
         
         return false;
