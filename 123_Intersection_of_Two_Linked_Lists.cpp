@@ -7,6 +7,11 @@ at which the two lists intersect. If the two linked lists have no intersection a
 For example, the following two linked lists begin to intersect at node c1:
 
 https://leetcode.com/problems/intersection-of-two-linked-lists/
+Method 1: Bruteforce TC: O(N*M) SC: O(1)
+Method 2: Using Hashmap/Hashset TC: O(N) SC: O(N)
+Method 3: Length diff TC: O(N) SC: O(1)
+Method 4: Iterate opposite TC: O(N) SC: O(1)
+
 Method 1: TC: O(N*M) SC: O(1)
 Loop over both linkedlist in O(n*m) fashion.
 For each nth element find if n == m. If yes return n; reset list2 after each iteration.
