@@ -33,47 +33,46 @@ https://practice.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937
 #include<bits/stdc++.h>
 using namespace std;
 
-class Solution 
-{
+class Solution {
     public:
-    bool isValid(int arr[], int n, int k, int maxPages) {
-    	int studentNeeded = 1;
-    	int sum = 0;
-    	for(int i=0; i<n; i++) {
-    		sum += arr[i];
-    		if(sum > maxPages) {
-    			studentNeeded++;
-    			sum = arr[i];	// reset sum to curr for new student
-    		}
-    		if(studentNeeded > k)
-    			return false;
-    	}
-    	return true;
-    }
+    bool isValid(int arr[], int n, int noStudents, int maxPages) {
+        int stu = 1;
+        int currPages = 0;
 
-    int findPages(int arr[], int n, int k)  {
-    	int maxInArray = INT_MIN;
-    	int sum = 0;
-    	for(int i=0; i<n; i++) {
-    		if(arr[i] > maxInArray) maxInArray = arr[i];
-    		sum += arr[i];
-    	}
-
-        int start = maxInArray;
-        int end = sum;
-
-        int answer = -1;
-        while(start <= end) {
-        	int mid = start + (end - start) / 2;
-        	if(isValid(arr, n, k, mid)) {
-        		answer = mid;
-        		end = mid - 1;	// Going left as to optimise the solution the current mid is valid max pages of book
-        	} else {
-        		start = mid + 1;	// Going right as current mid is not valid bze students needed > maxStudent available
-        	}
+        for(int i=0; i<n; i++) {
+            currPages += arr[i];
+            if(currPages > maxPages) {
+                stu++;
+                currPages = arr[i]; //reset sum to currPages for new student
+            }
+            if(stu > noStudents)
+                return false;
         }
 
-        return answer;
+        return true;
+    }
+
+    // minimize the max no of pages assigned to each student
+    // binary search space will contain max pages book one student can have ---- all book pages single one can have
+    int findPages(int arr[], int n, int k)  {
+        int l = arr[n-1];
+        int h = accumulate(arr, arr+n, 0);
+        int res = -1;
+
+        // edge conditions
+        if(n<k) return res;     // # students > # books
+
+        while(l<=h) {
+            int mid = l + (h-l)/2;
+            if(isValid(arr, n, k, mid)) {
+                res = mid;         // as we can loose the mid
+                h = mid-1;
+            } else {
+                l = mid+1;
+            }
+        }
+
+        return res;
     }
 };
 
@@ -94,3 +93,4 @@ int main() {
     }
     return 0;
 }
+  // } Driver Code Ends
