@@ -1,9 +1,6 @@
 /*
-[Contest]Max_Sum_of_a_Pair_With_Equal_Sum_of_Digits.cpp
-
-
+[Contest-Medium]Max_Sum_of_a_Pair_With_Equal_Sum_of_Digits.cpp
 https://leetcode.com/problems/max-sum-of-a-pair-with-equal-sum-of-digits/
-
 */
 
 #include <bits/stdc++.h>
@@ -11,15 +8,15 @@ using namespace std;
 
 int maximumSum(vector<int>& nums) {
     int res = -1;
-    int d_n[82] = {}; // 9 * 9
+    int dn[82] = {}; // 9 * 9
     
     for (int n : nums) {
         int d = 0;
-        for (int nn = n; nn; nn /= 10)
-            d += nn % 10;
-        if (d_n[d])
-            res = max(res, d_n[d] + n);
-        d_n[d] = max(d_n[d], n);
+        for (int i = n; i; i /= 10)
+            d += i % 10;
+        if (dn[d])
+            res = max(res, dn[d] + n);
+        dn[d] = max(dn[d], n);
     }
     
     return res;
