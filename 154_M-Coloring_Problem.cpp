@@ -21,7 +21,7 @@ Edges[] = {(0,1),(1,2),(0,2)}
 Output: 0
 
 https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1
-
+Method: Backtracking TC: O(M^N) SC: O(N)
 
 */
 
