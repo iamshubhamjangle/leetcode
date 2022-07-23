@@ -11,6 +11,8 @@ Input: head = [1,1,1,2,3]
 Output: [2,3]
 
 https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
+- Method: Using map. TC: O(N) SC: O(N)
+- Method: Using two pointer. TC: O(N) SC: O(1)
 
 */
 

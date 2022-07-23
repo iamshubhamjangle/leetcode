@@ -26,7 +26,7 @@ string longestPalindrome1(string s) {
 	return longest;
 }
 
-// Method 2
+// Method 2 - This is giving incorrect answer using expansion techique
 string longestPalindrome(string s) {
     int n = s.size();
     if(n <= 1) return s;
