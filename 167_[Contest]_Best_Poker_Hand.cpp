@@ -1,6 +1,8 @@
 /*
 [Contest]_Best_Poker_Hand.cpp
 
+https://leetcode.com/contest/biweekly-contest-83/problems/best-poker-hand/
+1. Use two unordered_map to check repeating counts TC: O(N) SC: O(N)
 */
 
 #include <bits/stdc++.h>
