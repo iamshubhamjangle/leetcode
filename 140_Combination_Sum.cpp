@@ -24,7 +24,7 @@ Output:
 
 https://practice.geeksforgeeks.org/problems/combination-sum-1587115620/1
 https://leetcode.com/problems/combination-sum/
-Method: Backtracking all posibble sums
+Method: Pick, no pick. Recursion. TC: O(2^t * k) SC: O(k*x). if x is the combination
 
 */
 
@@ -38,31 +38,31 @@ base conditions:
 */
 class Solution {
   public:
+    // Recursion: TC: O(2^t * k) SC: O(k*x). if x is the combination
   	vector<vector<int>> ans;
 
-  	void solve(int i, vector<int> &arr, vector<int> &temp, int target) {
-  		//base conditions
-		if(target == 0) {
-			ans.push_back(temp);
-			return;
-		}
+    void solve(int i, vector<int> &arr, vector<int> &temp, int target) {
+        if(i == arr.size()) {
+            if(target == 0) {
+                ans.push_back(temp);
+            }
+            return;
+        }
 
-		if(target < 0 || i == arr.size()) {
-			return;
-		}
+        if(arr[i] < target) {
+            temp.push_back(arr[i]);
+            solve(i, arr, temp, target - arr[i]);   // pick (i will remain same as elements can repeat)
+            temp.pop_back();
+        }
 
-  		//recusive calls
-  		solve(i+1, arr, temp, target);	// left
-  		temp.push_back(arr[i]);			// 
-  		solve(i, arr, temp, target - arr[i]);	// right
-  		temp.pop_back();				// 
-  	}
+        solve(i+1, arr, temp, target);        // nopick
+    }
 
-    vector<vector<int> > combinationSum(vector<int> &arr, int target) {
+    vector<vector<int>> combinationSum(vector<int> &arr, int target) {
         ans.clear();
         vector<int> temp;
         solve(0, arr, temp, target);
-		sort(ans.begin(), ans.end());
+        sort(ans.begin(), ans.end());
         return ans;
     }
 };
