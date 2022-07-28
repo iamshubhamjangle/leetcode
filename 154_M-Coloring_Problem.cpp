@@ -30,18 +30,18 @@ using namespace std;
 
 class Solution{
 public:
-	bool isPossible(bool graph[101][101],int color[],int N,int col,int node){
-        for(int k=0;k<N;k++){
-            if(k!=node && graph[node][k]==1 && color[k]==col) return false;
+	bool isPossible(bool graph[101][101], int color[], int N, int col, int node){
+        for(int k=0; k<N; k++){
+            if(k!=node && graph[node][k]==1 && color[k]==col) return false;     // adjacent node has same color
         }
-        return true;
+        return true;    // none of adjacent node has same color
     }
     
     bool solve(bool graph[101][101],int m,int N,int color[],int node){
         if(node==N) return true;
             
-        // traverse onto diff color recursively
-        for(int i=1;i<=m;i++){  
+        // try to color it with each and every color from 1 to m
+        for(int i=1; i<=m; i++){  
             if(isPossible(graph,color,N,i,node)){
                 color[node]=i;
                 if(solve(graph,m,N,color,node+1)) return true;
@@ -53,8 +53,9 @@ public:
     }
     
     bool graphColoring(bool graph[101][101], int m, int N) {
-        int color[N];
-        memset(color,0,sizeof color);
+        // int color[N];
+        // memset(color,0,sizeof color);
+        int color[N] = {0};
         return solve(graph,m,N,color,0);
     }
 };
