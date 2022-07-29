@@ -26,30 +26,30 @@ class Solution{
     public:
     vector<string> ans;
     
-    void solve(int i, int j, vector<vector<int>> &m, int n, string s) {
-        if(i<0 || i>=n || j<0 || j>=n || m[i][j]==0)    // if we are beyond boundary / current is blocked = 0
-            return;
-            
-        if(i==n-1 && j==n-1) {  // If we reached the end
-            ans.push_back(s);
-            s="";
+    void solve(int i, int j, vector<vector<int>> &m, int n, string ds) {
+        if(i < 0 || j < 0 || i >= n || j >= n || m[i][j] == 0) {     // if we are beyond boundary / current is blocked = 0
             return;
         }
-        
-        m[i][j] = 0;                    // set current visited
-        solve(i, j+1, m, n, s + "R");
-        solve(i, j-1, m, n, s + "L");
-        solve(i+1, j, m, n, s + "D");
-        solve(i-1, j, m, n, s + "U");
+
+        if(i == n-1 && j == n-1) {      // If we reached the end
+            ans.push_back(ds);
+            ds = "";
+            return;
+        }
+
+        m[i][j] = 0;                    // set current visited so it wont picked up next time
+        solve(i, j+1, m, n, ds + "R");
+        solve(i, j-1, m, n, ds + "L");
+        solve(i+1, j, m, n, ds + "D");
+        solve(i-1, j, m, n, ds + "U");
         m[i][j] = 1;                    // backtrack it to 1
     }
     
     vector<string> findPath(vector<vector<int>> &m, int n) {
-        string s = "";
+        string ds = "";
         if(m[0][0] == 0 || m[n-1][n-1] == 0)    // If we cannot start at first position or end
             return {};
-            
-        solve(0,0,m,n,s);
+        solve(0, 0, m, n, ds);
         return ans;
     }
 };
