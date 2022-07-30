@@ -15,8 +15,8 @@ m[][] = {{1, 0},
 Output: -1
 
 https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1#
-Method: Backtracking. TC: O((3N^2))  SC: O(L*X), L = length of the path, X = number of paths.
-
+Method: Backtracking. TC: O((4^(n*m))  SC: O(L*X), L = length of the path, X = number of paths.
+    
 */
 
 #include <bits/stdc++.h>
