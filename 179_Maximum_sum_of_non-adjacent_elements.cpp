@@ -47,6 +47,7 @@ https://www.codingninjas.com/codestudio/problems/maximum-sum-of-non-adjacent-ele
 #include <bits/stdc++.h>
 using namespace std;
 
+// ********************************************* //
 // 1. Recursion. TC: O(2^n) SC: O(1) ASC: O(N)
 // int solve(int i, vector<int> &nums) {
 //     if(i >= nums.size()) 
@@ -62,7 +63,24 @@ using namespace std;
 //     return solve(0, nums);
 // }
 
+// ********************************************* //
+// 1. Recursion. TC: O(2^n) SC: O(1) ASC: O(N)
+// int solve(int i, vector<int> &nums) {
+//     if(i == 0) return nums[i];
+//     if(i < 0) return 0;
+    
+//     int take   = solve(i-2, nums) + nums[i];
+//     int notake = solve(i-1, nums) + 0;
+//     return max(take, notake);
+// }
 
+// int maximumNonAdjacentSum(vector<int> &nums){
+//     int n = nums.size();
+//     return solve(0, nums);
+// }
+
+
+// ********************************************* //
 // Memoization. Method 2:  TC: O(N) SC: O(N) ASC: O(N)
 // int solve(int i, vector<int> &nums, vector<int> &dp) {
 //		if(i < 0)
@@ -87,6 +105,7 @@ using namespace std;
 // }
 
 
+// ********************************************* //
 // Tabulation - Method 2: Topdown. TC: O(N) SC: O(N)
 // int maximumNonAdjacentSum(vector<int> &nums){
 //     int n = nums.size();
@@ -105,6 +124,7 @@ using namespace std;
 // }
 
 
+// ********************************************* //
 // Space optimization - Method 2: Topdown.
 // int maximumNonAdjacentSum(vector<int> &nums){
 //     int n = nums.size();
