@@ -21,7 +21,7 @@ https://www.codingninjas.com/codestudio/problems/total-unique-paths_1081470
 #include <bits/stdc++.h>
 using namespace std;
 
-// Recursion. TC: O(2^(m*n)) SC: O(m*n) ASC: O((N-1)+(M-1))
+// Recursion. TC: O(2^(m*n)) SC: O(1) ASC: O(m+n)
 /*
 int solve(int m, int n) {
     if(m == 0 && n == 0)
@@ -42,6 +42,8 @@ int uniquePaths(int m, int n) {
 
 // Memoisation. TC: O(M*N)  SC: O((N-1)+(M-1))
 /*
+int mod = 1e9 + 7;
+
 int solve(int m, int n, vector<vector<int>> &dp) {
     if(m == 0 && n == 0)
         return 1;
@@ -53,7 +55,7 @@ int solve(int m, int n, vector<vector<int>> &dp) {
     int left  = solve(m, n-1, dp);
     int up = solve(m-1, n, dp);
     
-    return dp[m][n] = left + up;
+    return dp[m][n] = (left + up) % mod;
 }
 
 int uniquePaths(int m, int n) {
@@ -76,8 +78,8 @@ int solve(int m, int n, vector<vector<int>> &dp) {
 			int left = 0;
 			int up = 0;
 
-			if(i>0) up   = dp[i-1][j];
 			if(j>0) left = dp[i][j-1];
+			if(i>0) up   = dp[i-1][j];
 
 			dp[i][j] = up + left;
 		}
