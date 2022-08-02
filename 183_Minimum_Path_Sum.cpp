@@ -24,7 +24,7 @@ Output:
 5
 
 https://www.codingninjas.com/codestudio/problems/minimum-path-sum_985349
-
+Recursion - DP
 */
 
 #include <bits/stdc++.h>
