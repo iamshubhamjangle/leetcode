@@ -126,7 +126,7 @@ int getMaxPathSum(vector<vector<int> > &matrix){
      int n = matrix.size();
     int m = matrix[0].size();
     
-    vector<int> prev(m,0), cur(m,0);	// m as we only want to store columns
+    vector<int> prev(m,0), cur(m,0);	// m as we only want to store column
     
     // Initializing first row - base condition
     for(int j=0; j<m; j++){
