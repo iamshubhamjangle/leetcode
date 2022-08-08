@@ -19,9 +19,12 @@ Output:
 0
 
 https://www.codingninjas.com/codestudio/problems/number-of-subsets_3952532
-
-
+- Recursion. TC: O(2^n) SC: O(1) ASC: O(N)
+- Memoisation. TC: O(N*target) SC: O(N*target) ASC: O(N)
+- Tabulation. Top-Down - 0 to n-1. TC: O(N*target) SC: O(N*target)
+- Space Optimisation. TC: O(N*target) SC: O(target)
 */
+
 
 #include <bits/stdc++.h>
 using namespace std;
