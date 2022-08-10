@@ -12,6 +12,10 @@ Sample Output:
 13
 
 https://www.codingninjas.com/codestudio/problems/0-1-knapsack_920542
+- Recursion TC: O(2^n), SC: O(1) ASC: O(N) 
+- Memoization. TC: O(n*maxWeight), SC: O(n*maxWeight) ASC: O(N) 
+- Tabulation. TC: O(n*maxWeight), SC = O(N*maxWeight)
+- Space Optimisation. TC: O(n*maxWeight), SC = O(maxWeight)
 
 */
 
