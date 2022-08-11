@@ -36,6 +36,7 @@ long int sumBT(Node* root) {
 }
 
 // looking at constraints there will be 1 minimun node so root will never be NULL
+// hence lets avoid calls to null pointers.
 long int sumBT(Node* root) {
     return root->key + (root->left ? sumBT(root->left) : 0) + (root->right ? sumBT(root->right) : 0);
 }
