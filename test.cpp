@@ -2,7 +2,11 @@
 using namespace std;
 
 int main(){
-    string ans;
-    ans.push_back('0' + 1);
-    cout << ans[0];
+	int arr[6] = {1,2,3,4,5,6};
+	string str = "shubham";
+	vector<int> vec = {1,2,3,4,5,6,7,8};
+
+	cout << sizeof(arr) / sizeof(arr[0]) << endl;
+	cout << str.size() << endl;
+	cout << vec.size() << endl;
 }

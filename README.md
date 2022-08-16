@@ -37,6 +37,23 @@ Index:
 	- Selection Sort
 
 
+## Important Concepts
+Important Sizes
+```cpp
+int main(){
+	int arr[6] = {1,2,3,4,5,6};
+	string str = "shubham";
+	vector<int> vec = {1,2,3,4,5,6,7,8};
+
+	cout << sizeof(arr) / sizeof(arr[0]) << endl;
+	cout << str.size() << endl;
+	cout << vec.size() << endl;
+}
+```
+
+- Subsequences: Contiguous/Non-Contiguous + ordered elements - Power Set / Recursion - for n there are 2^n subsequences.
+
+
 
 ## Code Snippets
 ```cpp
@@ -65,9 +82,11 @@ void print(vector<int> &v) {
 	- Max path sum
 	- Triangle
 	- 2 start points with 2 people
-- DP on subsequences/substrings/subarray/subsets
+- DP on subsequences/subarray/subsets
 	- Subsets with target
 	- Unbounded Knapsack - stand at the same index while recursion.
+- DP on strings
+	- Comparisions, Replacement, Edits 
 
 
 ### Extras
