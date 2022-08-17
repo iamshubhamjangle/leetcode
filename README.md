@@ -57,6 +57,12 @@ int main(){
 
 ## Code Snippets
 ```cpp
+reverse(arr, arr+n);						// TC: O(N)
+reverse(vector.begin(), vector.end());		// TC: O(N)
+reverse(string.begin(), string.end());		// TC: O(N)
+
+sort()		// O(N*logN);
+
 // Print Vector string:
 void print(vector<string> &v) {
 	for(auto i: v) cout << i << ", ";
