@@ -1,6 +1,6 @@
 /*
 print_the_LCS.cpp
-
+longestCommonSubsequence
 
 Example 1:
 Input: text1 = "abcde", text2 = "ace" 
@@ -20,7 +20,7 @@ Output: ""
 #include <bits/stdc++.h>
 using namespace std;
 
-
+// TC: O(N*M) + O(2N), SC: O(M+N)
 string longestCommonSubsequence(string text1, string text2) {
 	int n = text1.size();
 	int m = text2.size();
