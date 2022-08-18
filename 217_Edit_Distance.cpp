@@ -148,7 +148,7 @@ class Solution {
     int minDistance(string word1, string word2) {
     	int n = word1.size();    
     	int m = word2.size();
-    	vector<int> prev(n+1, 0);
+    	vector<int> prev(m+1, 0);
     	vector<int> curr(m+1, 0);
 
     	for(int j=0; j<=m; j++) prev[j] = j;

@@ -95,6 +95,10 @@ int main(){
 
 - Recursion
 - Memoisation
+- Memoisation (Index Shifting)
+  - If base condition contains i < 0, increase the size of dp +1 and reduce the state variables -1)
+  - Whenever we have curr in base condition. i.e. we need to assign column value for each row. put this in first for loop.
+  - Always use m (column) / m+1 (idx shifted) size in vectors.
 - Tabulation (Bottom up)
 - Space Optimisation (Top down)
 - Space Optimisation to single array (Move from right to left)
