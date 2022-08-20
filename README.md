@@ -113,6 +113,10 @@ int main(){
 
 1. Base cases
 2. Look at the changing parameters & write nested loop
+
+   - if base condition is `ind == n` its loop will start from n-1 to 0
+   - if base condition is `cap == 0` its loop will start from n-1 to 1
+
 3. copy the recursion
 
 ### Space Optimization Steps:
