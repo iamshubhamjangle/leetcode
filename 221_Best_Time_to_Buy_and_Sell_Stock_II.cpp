@@ -1,5 +1,6 @@
 /*
 Best_Time_to_Buy_and_Sell_Stock_II.cpp
+Unlimited Transactions
 
 Input: prices = [7,1,5,3,6,4]
 Output: 7
