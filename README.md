@@ -13,29 +13,30 @@ git push
 
 ## Index
 
-1. Sorting & Searching Algo
-   - Binary Search
-   - Bubble Sort
-   - Heap Sort
-   - Insertion Sort
-   - Merge Sort
-   - Quick Sort
-   - Selection Sort
-2. Searching and Sorting
-3. Arrays
-4. Matrix
-5. Strings
-6. Greedy
-7. Backtracking
-8. DP
-9. Linked List
-10. Stacks and Queues
-11. Heaps - Priority Queue
-12. Binary trees
-13. BST
-14. Graphs
-15. Bit manipulation
-16. Trie
+- [Sorting & Searching Algo](https://www.youtube.com/watch?v=4gW6P5A1gxs)
+  - [Binary Search](https://www.youtube.com/playlist?list=PLBsIjVjZHP8pfwgl9tb72lPadnZ_S8U_m)
+  - Bubble Sort
+  - Heap Sort
+  - Insertion Sort
+  - Merge Sort
+  - Quick Sort
+  - Selection Sort
+- Arrays
+- 2D Array - Matrix
+- Strings
+- [Two Pointer](https://www.youtube.com/playlist?list=PLgUwDviBIf0rBT8io74a95xT-hDFZonNs)
+- [Greedy](https://www.youtube.com/playlist?list=PLgUwDviBIf0pmWCl2nepwGDO05a0-7EfJ)
+- [Hashing](https://www.youtube.com/playlist?list=PLgUwDviBIf0rVwua0kKYlsS_ik_1lyVK_)
+- [Recursion & Backtracking](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9)
+- [DP](https://www.youtube.com/playlist?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)
+- [Linked List](https://www.youtube.com/playlist?list=PLKZaSt2df1gz775Mz-2gLpY9sld5wH8We)
+- [Binary trees & BST](https://www.youtube.com/playlist?list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk)
+- [Stacks and Queues](https://www.youtube.com/playlist?list=PLgUwDviBIf0oSO572kQ7KCSvCUh1AdILj)
+- [Heaps - Priority Queue](https://www.youtube.com/playlist?list=PL_z_8CaSLPWdtY9W22VjnPxG30CXNZpI9)
+- [Graphs](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw)
+- [Bit manipulation](https://www.youtube.com/playlist?list=PLEJXowNB4kPwa5VPvdQ1U3B2yaogEGDjX)
+- [Trie](https://www.youtube.com/playlist?list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp)
+- [OOPS](https://www.youtube.com/watch?v=wN0x9eZLix4)
 
 <br>
 <br>
@@ -90,6 +91,11 @@ int main(){
 - DP on strings
   - Comparisions, Replacement, Edits
   - String Matching
+- DP on stocks
+  - Buy/Sell Transaction - 1, N
+  - Buy/Sell K stocks - 2, N
+  - Buy/Sell with capacity
+  - Buy/Sell with transaction fee
 
 ### Extras
 
