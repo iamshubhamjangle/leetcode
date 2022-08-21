@@ -14,22 +14,22 @@ git push
 ## Index
 
 - [Sorting & Searching Algo](https://www.youtube.com/watch?v=4gW6P5A1gxs)
-  - [Binary Search](https://www.youtube.com/playlist?list=PLBsIjVjZHP8pfwgl9tb72lPadnZ_S8U_m)
-  - Bubble Sort
-  - Heap Sort
-  - Insertion Sort
-  - Merge Sort
-  - Quick Sort
-  - Selection Sort
-- Arrays
-- 2D Array - Matrix
-- Strings
+  - ✅ [Binary Search](https://www.youtube.com/playlist?list=PLBsIjVjZHP8pfwgl9tb72lPadnZ_S8U_m)
+  - ✅ Bubble Sort
+  - ✅ Heap Sort
+  - ✅ Insertion Sort
+  - ✅ Merge Sort
+  - ✅ Quick Sort
+  - ✅ Selection Sort
+- ✅ Arrays
+- ✅ 2D Array - Matrix
+- ✅ Strings
 - [Two Pointer](https://www.youtube.com/playlist?list=PLgUwDviBIf0rBT8io74a95xT-hDFZonNs)
 - [Greedy](https://www.youtube.com/playlist?list=PLgUwDviBIf0pmWCl2nepwGDO05a0-7EfJ)
 - [Hashing](https://www.youtube.com/playlist?list=PLgUwDviBIf0rVwua0kKYlsS_ik_1lyVK_)
-- [Recursion & Backtracking](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9)
-- [DP](https://www.youtube.com/playlist?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)
-- [Linked List](https://www.youtube.com/playlist?list=PLKZaSt2df1gz775Mz-2gLpY9sld5wH8We)
+- ✅ [Recursion & Backtracking](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9)
+- ✅ [DP](https://www.youtube.com/playlist?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)
+- ✅ [Linked List](https://www.youtube.com/playlist?list=PLKZaSt2df1gz775Mz-2gLpY9sld5wH8We)
 - [Binary trees & BST](https://www.youtube.com/playlist?list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk)
 - [Stacks and Queues](https://www.youtube.com/playlist?list=PLgUwDviBIf0oSO572kQ7KCSvCUh1AdILj)
 - [Heaps - Priority Queue](https://www.youtube.com/playlist?list=PL_z_8CaSLPWdtY9W22VjnPxG30CXNZpI9)
@@ -144,7 +144,9 @@ reverse(arr, arr+n);						// TC: O(N)
 reverse(vector.begin(), vector.end());		// TC: O(N)
 reverse(string.begin(), string.end());		// TC: O(N)
 
-sort()		// O(N*logN);
+sort(vector.begin(), vector.end())		    // O(N*logN);
+sort(vector.rbegin(), vector.rend());       // reverse sort
+sort(...) // custom sort
 
 // Print Vector string:
 void print(vector<string> &v) {
