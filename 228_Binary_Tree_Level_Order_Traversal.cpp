@@ -14,6 +14,7 @@ Input: root = []
 Output: []
 
 https://leetcode.com/problems/binary-tree-level-order-traversal/
+TC: O(N) SC: O(N)
 */
 
 
@@ -30,6 +31,7 @@ https://leetcode.com/problems/binary-tree-level-order-traversal/
  */
 class Solution {
 public:
+    // TC: O(N) SC: O(N)
     // we will be using queue and a local level, later push local level to ans.
     vector<vector<int>> levelOrder(TreeNode* root) {
         vector<vector<int>> ans;
