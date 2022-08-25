@@ -159,4 +159,16 @@ void print(vector<int> &v) {
 	for(auto i: v) cout << i << ", ";
 	cout << endl;
 }
+
+// Iterate unordered_map
+for (auto i : m) 
+  cout << i.first << "    " << i.second
+```
+
+Bottom View of Binary Tree
+```
+BFS => Queue, Vertical Line Info => Map
+
+As this is BFS traversal, if we use DFS, right side of the tree nodes will be considered later
+this may cause using prev level node appearing in the line map.
 ```

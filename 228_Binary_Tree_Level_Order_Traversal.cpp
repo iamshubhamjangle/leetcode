@@ -35,19 +35,19 @@ public:
     // we will be using queue and a local level, later push local level to ans.
     vector<vector<int>> levelOrder(TreeNode* root) {
         vector<vector<int>> ans;
-        if(root == NULL) return ans;
         queue<TreeNode*> q;
+        if(root == NULL) return ans;
+
         q.push(root);
-        
         while(!q.empty()) {
             int n = q.size();
             vector<int> level;
             for(int i=0; i<n; i++) {
-                TreeNode* node = q.front();
-                q.pop();
+                TreeNode* node = q.front(); q.pop();
+                level.push_back(node->val);
+                
                 if(node->left) q.push(node->left);
                 if(node->right) q.push(node->right);
-                level.push_back(node->val);
             }
             ans.push_back(level);
         }
