@@ -10,6 +10,8 @@ class TreeNode {
 
 https://www.codingninjas.com/codestudio/problems/boundary-traversal_790725
 */
+#include <bits/stdc++.h>
+using namespace std;
 
 void addLeftBoundary(TreeNode* root, vector<int> &res) {
 	Node* curr = root->left;
