@@ -172,3 +172,12 @@ BFS => Queue, Vertical Line Info => Map
 As this is BFS traversal, if we use DFS, right side of the tree nodes will be considered later
 this may cause using prev level node appearing in the line map.
 ```
+
+### Trees
+#### Complete Binary Tree
+Tree which is completed filled except the last level where the node are filled from left to right
+TC: O(N) SC: O(log N)
+
+#### Full Binary Tree
+All the nodes are completely filled.
+TC: O(N), # nodes = (2^h - 1)  SC: O(log N)
