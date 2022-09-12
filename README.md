@@ -13,7 +13,7 @@ git push
 
 ## Index
 
-- [Sorting & Searching Algo](https://www.youtube.com/watch?v=4gW6P5A1gxs)
+- ✅ [Sorting & Searching Algo](https://www.youtube.com/watch?v=4gW6P5A1gxs)
   - ✅ [Binary Search](https://www.youtube.com/playlist?list=PLBsIjVjZHP8pfwgl9tb72lPadnZ_S8U_m)
   - ✅ Bubble Sort
   - ✅ Heap Sort
@@ -30,11 +30,11 @@ git push
 - ✅ [Recursion & Backtracking](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9)
 - ✅ [DP](https://www.youtube.com/playlist?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)
 - ✅ [Linked List](https://www.youtube.com/playlist?list=PLKZaSt2df1gz775Mz-2gLpY9sld5wH8We)
-- [Binary trees & BST](https://www.youtube.com/playlist?list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk)
+- ✅ [Binary trees & BST](https://www.youtube.com/playlist?list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk)
 - [Stacks and Queues](https://www.youtube.com/playlist?list=PLgUwDviBIf0oSO572kQ7KCSvCUh1AdILj)
 - [Heaps - Priority Queue](https://www.youtube.com/playlist?list=PL_z_8CaSLPWdtY9W22VjnPxG30CXNZpI9)
 - [Graphs](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw)
-- [Bit manipulation](https://www.youtube.com/playlist?list=PLEJXowNB4kPwa5VPvdQ1U3B2yaogEGDjX)
+- ✅ [Bit manipulation](https://www.youtube.com/playlist?list=PLEJXowNB4kPwa5VPvdQ1U3B2yaogEGDjX)
 - [Trie](https://www.youtube.com/playlist?list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp)
 - [OOPS](https://www.youtube.com/watch?v=wN0x9eZLix4)
 
@@ -181,3 +181,6 @@ TC: O(N) SC: O(log N)
 #### Full Binary Tree
 All the nodes are completely filled.
 TC: O(N), # nodes = (2^h - 1)  SC: O(log N)
+
+#### Binary Search Tree
+**Inorder** traversal for BST is always sorted.
