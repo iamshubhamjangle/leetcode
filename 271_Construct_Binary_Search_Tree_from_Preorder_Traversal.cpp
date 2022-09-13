@@ -11,24 +11,16 @@ Input: preorder = [1,3]
 Output: [1,null,3]
 
 https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
+	// 1. Bruteforce. TC: O(n*n)
+	// 2. Using Build tree from preorder and inorder concept. TC: O(NLogN) SC: O(N)
+	// 3. using upperbound concept. TC: O(N) SC: O(1)
 */
 
-
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
+//class TreeNode() : val(0), left(nullptr), right(nullptr) {}
 
 class Solution {
 public:
-	// // Using Build tree from preorder and inorder concept. TC: O(NLogN) SC: O(N)
+	// // 2. Using Build tree from preorder and inorder concept. TC: O(NLogN) SC: O(N)
 	// TreeNode* solve(vector<int> &preorder, int ps, int pe, vector<int> &inorder, int is, int ie, map<int,int> &mp) {
 	// 	if(ps > pe || is > ie)
 	// 		return NULL;
@@ -60,7 +52,7 @@ public:
  //    }
 
 
-	// 2. using upperbound concept. TC: O(N) SC: O(1)
+	// 3. using upperbound concept. TC: O(N) SC: O(1)
 	TreeNode* build(vector<int> &preorder, int &i, int bound) {
 		if(i == preorder.size() || preorder[i] > bound) return NULL;
 		TreeNode* root = new TreeNode(preorder[i]);
