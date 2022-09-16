@@ -51,5 +51,5 @@ vector<int> JobScheduling(Job arr[], int n) {
         }
     }
 
-    return {countJobs, comparator};
+    return {countJobs, jobProfit};
 }
