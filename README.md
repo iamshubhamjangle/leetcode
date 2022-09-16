@@ -63,7 +63,8 @@ int main(){
 
 <br>
 <br>
-### comparator
+
+### Comparator
 
 ```cpp
 bool comparator(struct meeting m1, meeting m2) {
@@ -77,14 +78,15 @@ sort(meet, meet+n, comparator);
 <br>
 <br>
 
-
 ## Constraints
+
 By looking at the constraints of a problem, we can often "guess" the solution.
 
 Common time complexities
 
 Let n be the main variable in the problem.
 
+```
 If n ≤ 12, the time complexity can be O(n!).
 If n ≤ 25, the time complexity can be O(2n).
 If n ≤ 100, the time complexity can be O(n4).
@@ -103,7 +105,7 @@ O(n log n) [Linearithmic time]: Fast comparison-based sorting (eg. Merge Sort)
 O(n) [Linear time]: Linear Search (Finding maximum/minimum element in a 1D array), Counting Sort
 O(log n) [Logarithmic time]: Binary Search, finding GCD (Greatest Common Divisor) using Euclidean Algorithm
 O(1) [Constant time]: Calculation (eg. Solving linear equations in one unknown)
-
+```
 
 ## Important Questions
 
@@ -111,13 +113,12 @@ O(1) [Constant time]: Calculation (eg. Solving linear equations in one unknown)
 
 <br>
 <br>
-<br>
 
 # DSA Notes
 
 # DP
 
-## DP Types
+**DP Types**
 
 - DP on grids
   - Count paths
@@ -202,11 +203,12 @@ void print(vector<int> &v) {
 }
 
 // Iterate unordered_map
-for (auto i : m) 
+for (auto i : m)
   cout << i.first << "    " << i.second
 ```
 
 Bottom View of Binary Tree
+
 ```
 BFS => Queue, Vertical Line Info => Map
 
@@ -215,13 +217,17 @@ this may cause using prev level node appearing in the line map.
 ```
 
 ### Trees
+
 #### Complete Binary Tree
+
 Tree which is completed filled except the last level where the node are filled from left to right
 TC: O(N) SC: O(log N)
 
 #### Full Binary Tree
+
 All the nodes are completely filled.
-TC: O(N), # nodes = (2^h - 1)  SC: O(log N)
+TC: O(N), # nodes = (2^h - 1) SC: O(log N)
 
 #### Binary Search Tree
+
 **Inorder** traversal for BST is always sorted.
