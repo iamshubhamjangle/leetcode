@@ -61,42 +61,64 @@ class Solution{
 
   	// Method 2: Merge sort
     /* This function merges two sorted arrays and returns inversion count in the arrays.*/
-    long long counter;
 
-    void Merge(long long A[], long long L, long long mid, long long R){
-       long long B[R+1];
-       long long i = L, j = mid +1, k = L;
-       while(i <= mid && j <= R){
-           if(A[i] <= A[j])
-               B[k++] = A[i++];
-           else{
-               B[k++] = A[j++];
-               counter += mid - i +1;
-       }
-     }
-     while(i <= mid)
-         B[k++] = A[i++];
-     while(j <= R)
-         B[k++] = A[j++];
-         
-     for(long long i = L; i <= R; i++)
-          A[i] = B[i];
+    long long int merge(long long int arr[], long long int temp[], int left, int mid, int right) {
+        int i = left;
+        int j = mid;
+        int k = left;
+        long long int inv_count = 0;
+
+        // while two pointer are within limits
+        // try to merge based on which is smaller
+        while((i<=mid-1) && (j<=right)) {
+            if(arr[i] <= arr[j]) {
+                temp[k] = arr[i];
+                k++;
+                i++;
+            } else {
+                temp[k] = arr[j];
+                k++;
+                j++;
+                inv_count = inv_count + (mid - i);
+            }
+        }
+
+        // push the leftover to temp;
+        while(i <= mid-1) {
+            temp[k] = arr[i];
+            k++; i++;
+        }
+
+        while(j <= right) {
+            temp[k] = arr[j];
+            k++; j++;
+        }
+
+        // copy the temp back to arr
+        for(i = left; i<=right; i++) {
+            arr[i] = temp[i];
+        }
+
+        return inv_count;
     }
 
-    void MergeSort(long long A[], long long L, long long R){
-       if (L<R){
-           long long mid = (L+R)/2;
-           MergeSort(A, L, mid);
-           MergeSort(A, mid+1, R);
-           Merge(A, L, mid, R);
-       }
+    // @return inversion count
+    long long int mergeSort(long long int arr[], long long int temp[], int left, int right) {
+        long long int mid, count = 0;
+        if(right > left) {
+            mid = (right + left) / 2;
+
+            long long int l = mergeSort(arr, temp, left, mid);
+            long long int r = mergeSort(arr, temp, mid+1, right);
+
+            count = l + r + merge(arr, temp, left, mid+1, right);
+        }
+        return count;
     }
     
-    long long int inversionCount(long long A[], long long N)
-    {
-        counter = 0;
-        MergeSort(A, 0, N-1);
-        return counter;
+    long long int inversionCount(long long arr[], long long n) {
+        long long int temp[n];
+        return mergeSort(arr, temp, 0, n-1);
     }
 };
 

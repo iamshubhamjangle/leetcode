@@ -24,7 +24,7 @@ git push
 - ✅ Arrays
 - ✅ 2D Array - Matrix
 - ✅ Strings
-- [Two Pointer](https://www.youtube.com/playlist?list=PLgUwDviBIf0rBT8io74a95xT-hDFZonNs)
+- ✅ [Two Pointer](https://www.youtube.com/playlist?list=PLgUwDviBIf0rBT8io74a95xT-hDFZonNs)
 - [Greedy](https://www.youtube.com/playlist?list=PLgUwDviBIf0pmWCl2nepwGDO05a0-7EfJ)
 - [Hashing](https://www.youtube.com/playlist?list=PLgUwDviBIf0rVwua0kKYlsS_ik_1lyVK_)
 - ✅ [Recursion & Backtracking](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9)
@@ -63,6 +63,20 @@ int main(){
 
 <br>
 <br>
+### comparator
+
+```cpp
+bool comparator(struct meeting m1, meeting m2) {
+    if(condition) return true;    // no swap
+    return false;                 // swap
+}
+
+sort(meet, meet+n, comparator);
+```
+
+<br>
+<br>
+
 
 ## Important Questions
 
