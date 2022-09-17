@@ -44,7 +44,6 @@ git push
 ## Important Concepts
 
 Important Sizes
-
 ```cpp
 int main(){
 	int arr[6] = {1,2,3,4,5,6};
@@ -64,26 +63,9 @@ int main(){
 <br>
 <br>
 
-### Comparator
-
-```cpp
-bool comparator(struct meeting m1, meeting m2) {
-    if(condition) return true;    // no swap
-    return false;                 // swap
-}
-
-sort(meet, meet+n, comparator);
-```
-
-<br>
-<br>
-
 ## Constraints
-
 By looking at the constraints of a problem, we can often "guess" the solution.
-
 Common time complexities
-
 Let n be the main variable in the problem.
 
 ```
@@ -115,11 +97,15 @@ O(1) [Constant time]: Calculation (eg. Solving linear equations in one unknown)
 <br>
 
 # DSA Notes
+## Seaching and Sorting
+### Binary search
+```cpp
+vector<int>::iterator lower = lower_bound(v.begin(), v.end(), 6);     // pointer not less than 6
+vector<int>::iterator upper = upper_bound(v.begin(), v.end(), 6);     // pointer greater than 6
+```
 
-# DP
-
+## DP
 **DP Types**
-
 - DP on grids
   - Count paths
   - Count paths with obstacles
@@ -139,8 +125,7 @@ O(1) [Constant time]: Calculation (eg. Solving linear equations in one unknown)
   - Buy/Sell with capacity
   - Buy/Sell with transaction fee
 
-### Extras
-
+#### DP Notes
 - Recursion
 - Memoisation
 - Memoisation (Index Shifting)
@@ -151,13 +136,13 @@ O(1) [Constant time]: Calculation (eg. Solving linear equations in one unknown)
 - Space Optimisation (Top down)
 - Space Optimisation to single array (Move from right to left)
 
-### Recurrence Steps:
+#### Recurrence Steps:
 
 1. Express in terms of Index.
 2. Explore all possibilities.
 3. Sum all possibilities/min/max
 
-### Tabulation Steps:
+#### Tabulation Steps:
 
 1. Base cases
 2. Look at the changing parameters & write nested loop
@@ -167,7 +152,7 @@ O(1) [Constant time]: Calculation (eg. Solving linear equations in one unknown)
 
 3. copy the recursion
 
-### Space Optimization Steps:
+#### Space Optimization Steps:
 
 1. Declare two vectors (prev, curr) of size (column + 1) init with 0's.
 2. Fill the prev vector with base conditions.
@@ -180,7 +165,7 @@ O(1) [Constant time]: Calculation (eg. Solving linear equations in one unknown)
 <br>
 
 ## Miscellaneous Code Snippets
-
+**Reverse, Sort**
 ```cpp
 reverse(arr, arr+n);						// TC: O(N)
 reverse(vector.begin(), vector.end());		// TC: O(N)
@@ -189,7 +174,10 @@ reverse(string.begin(), string.end());		// TC: O(N)
 sort(vector.begin(), vector.end())		    // O(N*logN);
 sort(vector.rbegin(), vector.rend());       // reverse sort
 sort(...) // custom sort
-
+// Quicksort, Heapsort and Insertion Sort
+```
+**Printing**
+```cpp
 // Print Vector string:
 void print(vector<string> &v) {
 	for(auto i: v) cout << i << ", ";
@@ -201,22 +189,37 @@ void print(vector<int> &v) {
 	for(auto i: v) cout << i << ", ";
 	cout << endl;
 }
-
+```
+**Iterating**
+```cpp
 // Iterate unordered_map
 for (auto i : m)
   cout << i.first << "    " << i.second
 ```
+**Comparator**
+```cpp
+bool comparator(struct meeting m1, meeting m2) {
+    if(condition) return true;    // no swap
+    return false;                 // swap
+}
 
-Bottom View of Binary Tree
+sort(meet, meet+n, comparator);
+```
 
+**Maps**
+```cpp
+if(umap.find(num) != um.end()) // number present in unorderedmap
+```
+
+
+## Trees
+#### Bottom View of Binary Tree
 ```
 BFS => Queue, Vertical Line Info => Map
 
 As this is BFS traversal, if we use DFS, right side of the tree nodes will be considered later
 this may cause using prev level node appearing in the line map.
 ```
-
-### Trees
 
 #### Complete Binary Tree
 
