@@ -75,6 +75,27 @@ class Solution{
         }
         return count;
     }
+
+
+    // 2. Optimised. UnorderedSet -> Iterate (find min and count) TC: O(3N) SC: O(N)
+    int longestConsecutive(vector<int>& nums) {
+        unordered_set<int> us(nums.begin(), nums.end());    // this is faster
+        // for(auto i: nums) us.insert(i);
+
+        int maxCount = 0;
+        for(auto &i: nums) {
+            if(us.find(i-1) == us.end()) {
+                int count = 0;
+                while(us.find(i) != us.end()){
+                    count++;
+                    i++;
+                }
+                maxCount = max(count, maxCount);
+            }
+        }
+
+        return maxCount;
+    }
 };
 
 int main()

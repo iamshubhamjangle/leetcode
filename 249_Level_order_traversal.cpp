@@ -13,6 +13,19 @@ https://practice.geeksforgeeks.org/problems/level-order-traversal/1
 */
 
 class Solution {
+    // Function to reverse the queue
+    void reverseQueue(queue<int>& Queue) {
+        stack<int> Stack;
+        while (!Queue.empty()) {
+            Stack.push(Queue.front());
+            Queue.pop();
+        }
+        while (!Stack.empty()) {
+            Queue.push(Stack.top());
+            Stack.pop();
+        }
+    }
+
     public:
     vector<int> levelOrder(Node* node) {
         queue<Node*> q;
@@ -24,7 +37,8 @@ class Solution {
             int n = q.size();
             while(n--) {
                 Node* up = q.front(); q.pop();
-                ans.push_back(up->data);
+                
+                
 
                 if(up->left) q.push(up->left);
                 if(up->right) q.push(up->right);
