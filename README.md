@@ -26,7 +26,7 @@ git push
 - ✅ Strings
 - ✅ [Two Pointer](https://www.youtube.com/playlist?list=PLgUwDviBIf0rBT8io74a95xT-hDFZonNs)
 - ✅ [Greedy](https://www.youtube.com/playlist?list=PLgUwDviBIf0pmWCl2nepwGDO05a0-7EfJ)
-- [Hashing](https://www.youtube.com/playlist?list=PLgUwDviBIf0rVwua0kKYlsS_ik_1lyVK_)
+- ✅ [Hashing](https://www.youtube.com/playlist?list=PLgUwDviBIf0rVwua0kKYlsS_ik_1lyVK_)
 - ✅ [Recursion & Backtracking](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9)
 - ✅ [DP](https://www.youtube.com/playlist?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)
 - ✅ [Linked List](https://www.youtube.com/playlist?list=PLKZaSt2df1gz775Mz-2gLpY9sld5wH8We)
