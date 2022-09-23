@@ -21,18 +21,43 @@ j = 0,1,2
 */
 class Solution {
 public:
+	// // Bruteforce. TC: O(N*N) SC: O(N)
+ //    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+ //        int n = nums.size();
+ //        vector<int> ans;
+
+ //        for(int i=0; i<n-k+1; i++) {
+ //        	int maxi = INT_MIN;
+ //        	for(int j=i; j<i+k; j++) {
+ //        		maxi = max(maxi, nums[j]);
+ //        	}
+ //        	ans.push_back(maxi);
+ //        }
+
+ //        return ans;
+ //    }
+
+
+    // Optimized. Deque. Sliding window. TC: O(N) SC: O(N)
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
-        int n = nums.size();
-        vector<int> ans;
+    	deque<int> dq;
+    	vector<int> ans;
 
-        for(int i=0; i<n-k+1; i++) {
-        	int maxi = INT_MIN;
-        	for(int j=i; j<i+k; j++) {
-        		maxi = max(maxi, nums[j]);
-        	}
-        	ans.push_back(maxi);
-        }
+    	for(int i=0; i<nums.size(); i++) {
+    		// remove the out of bound element from queue
+    		if(!dq.empty() && dq.front() == i-k)
+    			dq.pop_front();
 
-        return ans;
+    		// Remove all element smaller than a[i]
+    		while(!dq.empty() && nums[dq.back()] <= nums[i])
+    			dq.pop_back();
+
+    		dq.push_back(i);
+
+    		// push elements beyond ith index
+    		if(i>=k-1) ans.push_back(nums[dq.front()]);
+    	}
+
+    	return ans;
     }
 };
