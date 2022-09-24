@@ -31,12 +31,12 @@ git push
 - ✅ [DP](https://www.youtube.com/playlist?list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY)
 - ✅ [Linked List](https://www.youtube.com/playlist?list=PLKZaSt2df1gz775Mz-2gLpY9sld5wH8We)
 - ✅ [Binary trees & BST](https://www.youtube.com/playlist?list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk)
-- [Stacks and Queues](https://www.youtube.com/playlist?list=PLgUwDviBIf0oSO572kQ7KCSvCUh1AdILj)
+- ✅ [Stacks and Queues](https://www.youtube.com/playlist?list=PLgUwDviBIf0oSO572kQ7KCSvCUh1AdILj)
 - [Heaps - Priority Queue](https://www.youtube.com/playlist?list=PL_z_8CaSLPWdtY9W22VjnPxG30CXNZpI9)
 - [Graphs](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw)
 - ✅ [Bit manipulation](https://www.youtube.com/playlist?list=PLEJXowNB4kPwa5VPvdQ1U3B2yaogEGDjX)
-- [Trie](https://www.youtube.com/playlist?list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp)
 - [OOPS](https://www.youtube.com/watch?v=wN0x9eZLix4)
+- [Trie](https://www.youtube.com/playlist?list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp)
 
 <br>
 <br>
@@ -171,9 +171,17 @@ reverse(arr, arr+n);						// TC: O(N)
 reverse(vector.begin(), vector.end());		// TC: O(N)
 reverse(string.begin(), string.end());		// TC: O(N)
 
-sort(vector.begin(), vector.end())		    // O(N*logN);
-sort(vector.rbegin(), vector.rend());       // reverse sort
-sort(...) // custom sort
+sort(vector.begin(), vector.end())		          // sort - O(N*logN);
+sort(vector.rbegin(), vector.rend());           // decending
+sort(arr, arr+n, greater<int>());               // decending
+sort(nums.begin(), nums.end(), greater<int>()); // decending
+
+sort(arr, arr+n, comparator) // custom sort
+bool comparator(<T> a, <T> b) {
+  return true;    // noswap
+  return false;   // swap
+}
+
 // Quicksort, Heapsort and Insertion Sort
 ```
 **Printing**
@@ -234,3 +242,30 @@ TC: O(N), # nodes = (2^h - 1) SC: O(log N)
 #### Binary Search Tree
 
 **Inorder** traversal for BST is always sorted.
+
+
+## Heap - Priority Queue
+Types
+- Min Heap
+  `priority_queue<int, vector<int>, greater<int>> minPQ`
+  ```
+  typedef pair<int, pair<int, int> ppi;
+  priority_queue<ppi, vector<ppi>, greater<ppi> minPQ;
+  ```
+- Max Heap
+  `priority_queue<int> maxPQ`
+
+Identification
+K + smallest = max heap
+K + largest  = min heap
+
+Normally can be solved by sorting (nlogn), but K is provided so that you can reduce it to (nlogk).
+Heap doesnt gaurentee the elements are in sorted only the top element is max.
+
+
+
+
+
+
+
+
