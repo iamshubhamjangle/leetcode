@@ -245,6 +245,8 @@ TC: O(N), # nodes = (2^h - 1) SC: O(log N)
 
 
 ## Heap - Priority Queue
+Question ask find largest/smallest/top/bottom/frequent/closest k elements.
+
 Types
 - Min Heap
   `priority_queue<int, vector<int>, greater<int>> minPQ`
