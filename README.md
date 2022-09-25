@@ -32,7 +32,7 @@ git push
 - ✅ [Linked List](https://www.youtube.com/playlist?list=PLKZaSt2df1gz775Mz-2gLpY9sld5wH8We)
 - ✅ [Binary trees & BST](https://www.youtube.com/playlist?list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk)
 - ✅ [Stacks and Queues](https://www.youtube.com/playlist?list=PLgUwDviBIf0oSO572kQ7KCSvCUh1AdILj)
-- [Heaps - Priority Queue](https://www.youtube.com/playlist?list=PL_z_8CaSLPWdtY9W22VjnPxG30CXNZpI9)
+- ✅ [Heaps - Priority Queue](https://www.youtube.com/playlist?list=PL_z_8CaSLPWdtY9W22VjnPxG30CXNZpI9)
 - [Graphs](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw)
 - ✅ [Bit manipulation](https://www.youtube.com/playlist?list=PLEJXowNB4kPwa5VPvdQ1U3B2yaogEGDjX)
 - [OOPS](https://www.youtube.com/watch?v=wN0x9eZLix4)
@@ -196,6 +196,13 @@ void print(vector<string> &v) {
 void print(vector<int> &v) {
 	for(auto i: v) cout << i << ", ";
 	cout << endl;
+}
+
+// Print vector of vector
+void print(vector<vector<int>> &v) {
+  cout << "[";
+  for(auto i: v) { cout << "["; for(auto j: i) cout << j << ","; cout << "]"; }
+  cout << "]" << endl;
 }
 ```
 **Iterating**
