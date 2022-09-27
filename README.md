@@ -35,8 +35,8 @@ git push
 - ✅ [Heaps - Priority Queue](https://www.youtube.com/playlist?list=PL_z_8CaSLPWdtY9W22VjnPxG30CXNZpI9)
 - ✅ [Bit manipulation](https://www.youtube.com/playlist?list=PLEJXowNB4kPwa5VPvdQ1U3B2yaogEGDjX)
 - [Graphs](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw)
-- [OOPS](https://www.youtube.com/watch?v=wN0x9eZLix4)
 - [Trie](https://www.youtube.com/playlist?list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp)
+- ✅ [OOPS](https://www.youtube.com/watch?v=wN0x9eZLix4)
 
 <br>
 <br>
