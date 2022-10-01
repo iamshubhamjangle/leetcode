@@ -47,6 +47,7 @@ https://practice.geeksforgeeks.org/problems/topological-sort/1
 
 
 // BFS
+// Kahn;s Algorithm
 class Solution {
 public: 
 	vector<int> topoSort(int V, vector<int> adj[]) {

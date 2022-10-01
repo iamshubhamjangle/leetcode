@@ -8,7 +8,8 @@ https://leetcode.com/problems/is-graph-bipartite/
 
 class Solution {
 public:
-	// TC: O(N+E) SC: O(N+E) + O(N) + O(N)	==> (node+edges) queue, color
+	// // _________________ BFS _________________
+	// // TC: O(N+E) SC: O(N+E) + O(N) + O(N)	==> (node+edges) queue, color
 	// bool bfs(int i, vector<int> &color, vector<vector<int>> &graph) {
 	// 	queue<int> q;
 	// 	q.push(i);
@@ -47,6 +48,7 @@ public:
 
 
 
+	// _________________ DFS _________________
 	// TC: O(N+E) SC: O(N+E) + O(N) ASC: O(N)
 	bool dfs(int i, vector<int> &color, vector<vector<int>> &graph) {
 		if(color[i] == 0) color[i] = 1; // if uncolored then only color
