@@ -1,0 +1,37 @@
+/*
+Maximum_Depth_of_Binary_Tree.cpp
+
+Given the root of a binary tree, return its maximum depth.
+Input: root = [3,9,20,null,null,15,7]
+Output: 3
+
+Input: root = [1,null,2]
+Output: 2
+
+Method: DFS / Recursion
+https://leetcode.com/problems/maximum-depth-of-binary-tree/
+*/
+
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    // Recursion: TC: O(N) SC: O(N)
+    int maxDepth(TreeNode* root) {
+        if(root == NULL) return 0;
+        
+        int l = maxDepth(root -> left);
+        int r = maxDepth(root -> right);
+        return 1 + max(l,r);
+    }
+};
