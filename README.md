@@ -34,7 +34,7 @@ git push
 - ✅ [Stacks and Queues](https://www.youtube.com/playlist?list=PLgUwDviBIf0oSO572kQ7KCSvCUh1AdILj)
 - ✅ [Heaps - Priority Queue](https://www.youtube.com/playlist?list=PL_z_8CaSLPWdtY9W22VjnPxG30CXNZpI9)
 - ✅ [Bit manipulation](https://www.youtube.com/playlist?list=PLEJXowNB4kPwa5VPvdQ1U3B2yaogEGDjX)
-- ✅ [Graphs](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw)  - BFS, DFS, Cycle, Bipartite, TopoSort, ShortestPath, Dijkstra(weighted)
+- ✅ [Graphs](https://www.youtube.com/playlist?list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw) - BFS, DFS, Cycle, Bipartite, TopoSort, ShortestPath, Dijkstra(weighted)
 - ✅ [OOPS](https://www.youtube.com/watch?v=wN0x9eZLix4)
 - [Trie](https://www.youtube.com/playlist?list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp)
 
@@ -43,7 +43,8 @@ git push
 
 ## Important Concepts
 
-Important Sizes
+Sizes
+
 ```cpp
 int main(){
 	int arr[6] = {1,2,3,4,5,6};
@@ -56,6 +57,8 @@ int main(){
 }
 ```
 
+String/Array Types
+
 - **Subsequences**: Contiguous/Non-Contiguous + ordered - Power Set / Recursion (take - notake) - for n there are 2^n subsequences.
 - **Substring**: Contiguous + ordered
 - **Super-Sequence**: After merging two numbers, ordered + non contiguous.
@@ -64,6 +67,7 @@ int main(){
 <br>
 
 ## Constraints
+
 By looking at the constraints of a problem, we can often "guess" the solution.
 Common time complexities
 Let n be the main variable in the problem.
@@ -97,15 +101,24 @@ O(1) [Constant time]: Calculation (eg. Solving linear equations in one unknown)
 <br>
 
 # DSA Notes
+
 ## Seaching and Sorting
+
 ### Binary search
+
 ```cpp
 vector<int>::iterator lower = lower_bound(v.begin(), v.end(), 6);     // pointer not less than 6
 vector<int>::iterator upper = upper_bound(v.begin(), v.end(), 6);     // pointer greater than 6
 ```
 
+<br>
+<br>
+<br>
+
 ## DP
+
 **DP Types**
+
 - DP on grids
   - Count paths
   - Count paths with obstacles
@@ -126,6 +139,7 @@ vector<int>::iterator upper = upper_bound(v.begin(), v.end(), 6);     // pointer
   - Buy/Sell with transaction fee
 
 #### DP Notes
+
 - Recursion
 - Memoisation
 - Memoisation (Index Shifting)
@@ -165,7 +179,9 @@ vector<int>::iterator upper = upper_bound(v.begin(), v.end(), 6);     // pointer
 <br>
 
 ## Miscellaneous Code Snippets
+
 **Reverse, Sort**
+
 ```cpp
 reverse(arr, arr+n);						// TC: O(N)
 reverse(vector.begin(), vector.end());		// TC: O(N)
@@ -184,7 +200,9 @@ bool comparator(<T> a, <T> b) {
 
 // Quicksort, Heapsort and Insertion Sort
 ```
+
 **Printing**
+
 ```cpp
 // Print Vector string:
 void print(vector<string> &v) {
@@ -205,13 +223,17 @@ void print(vector<vector<int>> &v) {
   cout << "]" << endl;
 }
 ```
+
 **Iterating**
+
 ```cpp
 // Iterate unordered_map
 for (auto i : m)
   cout << i.first << "    " << i.second
 ```
+
 **Comparator**
+
 ```cpp
 bool comparator(struct meeting m1, meeting m2) {
     if(condition) return true;    // no swap
@@ -222,13 +244,19 @@ sort(meet, meet+n, comparator);
 ```
 
 **Maps**
+
 ```cpp
 if(umap.find(num) != um.end()) // number present in unorderedmap
 ```
 
+<br>
+<br>
+<br>
 
 ## Trees
+
 #### Bottom View of Binary Tree
+
 ```
 BFS => Queue, Vertical Line Info => Map
 
@@ -250,11 +278,16 @@ TC: O(N), # nodes = (2^h - 1) SC: O(log N)
 
 **Inorder** traversal for BST is always sorted.
 
+<br>
+<br>
+<br>
 
 ## Heap - Priority Queue
+
 Question ask find largest/smallest/top/bottom/frequent/closest k elements.
 
 Types
+
 - Min Heap
   `priority_queue<int, vector<int>, greater<int>> minPQ`
   ```
@@ -266,15 +299,82 @@ Types
 
 Identification
 K + smallest = max heap
-K + largest  = min heap
+K + largest = min heap
 
 Normally can be solved by sorting (nlogn), but K is provided so that you can reduce it to (nlogk).
 Heap doesnt gaurentee the elements are in sorted only the top element is max.
 
+<br>
+<br>
+<br>
 
+## Graph
 
+Nodes connected with edges is a graph. A graph can be consisting of several components.
 
+Types:
 
+- Directed
+- Undirected
+- Weighted
 
+Traversal
 
+- DFS (recursive & visited[])
+- BFS (using queue & visited[])
 
+Adjacency List
+
+```cpp
+vector<int> adj[];              // unweighted [{node1, node2},...]
+vector<pair<int, int>> adj[];   // weighted [{{node1, weight1},{}},...]
+```
+
+### Problems
+
+1. Detect a cycle
+
+   - BFS: Found a node visited but not equal to prev it's a cycle. Use `visited[]` and `queue<int, prev>`
+   - DFS: Found a node visited but not equal to prev it's a cycle. Use `visited[]` and `prev`
+
+2. Bipartite
+
+   - BFS: If node is uncolored, color it using -1 \* prevColor. If colored check if its equal to prevColor. If equal return false; else true;. Use `visited[]` and `queue<int, prev>`
+   - DFS: If node is uncolored, color it using -1 \* prevColor. If colored check if its equal to prevColor. If equal return false, else true. Use `visited[]` and `prev`
+
+3. Topo Sort
+
+   - BFS: (Kahn's Algorithm) Find all indegree. Push 0th indegree to `queue` and `bfsVisited`. Reduce the indegree of adj if indegree == 0 push it to queue.
+   - DFS: Visit all nodes till end while coming back push them to vector.
+
+4. Shortest Path (Undirected, Unit weight)
+
+   - BFS:
+
+   ```cpp
+   // Push src = 0 to queue.
+   while(!q.empty()) {
+     if(dist[node] + 1 < dist[it])
+       q.push(it);
+   }
+   ```
+
+5. Shortest Path (Directed Acyclic Graph, Unit weight)
+
+   - DFS: First find topo sort
+
+   ```cpp
+     dist[src] = 0;
+     if(dist[node] + it.second < dist[it.first])
+       dfs();
+   ```
+
+6. Shortest Path (Weighted)
+
+   - BFS (Dijsktra Algorithm) Use `priority_queue<minheap>` for implementation.
+
+7. MST (Minimum Spanning Tree)
+   - Tree where nodes are N and Edges are N-1.
+   - We can convert a normal graph to MST using
+     - Prims Algorithm
+     - Kruskal Algorithm
