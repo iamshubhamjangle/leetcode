@@ -1,25 +1,31 @@
+/*
+
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
-public:
-    vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        vector<vector<int>> res;
-        if(intervals.size() == 0) return res;
+int minGroups(vector<int> arr, int k) {
+    int n = arr.size();
+    sort(arr.begin(), arr.end());
 
-        sort(intervals.begin(), intervals.end());
-        vector<int> temp = intervals[0];
+    int ans = 1;
 
-        for(auto it: intervals) {
-            if(it[0] <= temp[1]) {
-                temp[1] = max(temp[1], it[1]);
-            } else {
-                res.push_back(temp);
-                temp = it;
-            }
+    int limit = arr[0] + k;
+    int i = 0;
+    while(i < n) {
+        if(arr[i] > limit) {
+            ans++;
+            limit = arr[i] + k;
         }
-
-        res.push_back(temp);
-        return res;
+        i++;
     }
-};
+
+    return ans;
+}
+
+int main(){
+    vector<int> arr = {1,13,6,8,9,3,5};
+    cout << minGroups(arr, 4) << endl;
+}
