@@ -12,6 +12,25 @@ typedef int64_t I64;
  
 using namespace std;
 
+// Print Vector string:
+void print(vector<string> &v) {
+    for(auto i: v) cout << i << ", ";
+    cout << endl;
+}
+
+// Print Vector int:
+void print(vector<int> &v) {
+    for(auto i: v) cout << i << ", ";
+    cout << endl;
+}
+
+// Print vector of vector
+void print(vector<vector<int>> &v) {
+  cout << "[";
+  for(auto i: v) { cout << "["; for(auto j: i) cout << j << ","; cout << "]"; }
+  cout << "]" << endl;
+}
+
 int solve() {
 
 
@@ -27,10 +46,8 @@ int main() {
         int ans=0;
         // Inputs
 
-
-
         // Logic
-        ans = solve();
+        ans = solve(n, d, id, v);
 
         // output
         cout<< "Case #" << te-t << ": " << ans << endl;
