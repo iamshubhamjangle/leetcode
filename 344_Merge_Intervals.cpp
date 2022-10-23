@@ -15,18 +15,18 @@ public:
         if(intervals.size() == 0) return res;
 
         sort(intervals.begin(), intervals.end());
-        vector<int> temp = intervals[0];
+        vector<int> temp = intervals[0];        // get the first interval in temp
 
-        for(auto it: intervals) {
-            if(it[0] <= temp[1]) {
-                temp[1] = max(temp[1], it[1]);
+        for(auto it: intervals) {               // loop over all intervals
+            if(it[0] <= temp[1]) {              // curr start <= temp end ---> merge 
+                temp[1] = max(temp[1], it[1]);          // update temp end with curr end
             } else {
-                res.push_back(temp);
-                temp = it;
+                res.push_back(temp);            // as temp was valid push it to res
+                temp = it;                      // temp = curr
             }
         }
 
-        res.push_back(temp);
-        return res;
+        res.push_back(temp);                    // push last temp
+        return res;                             // return res
     }
 };
