@@ -26,7 +26,7 @@ public:
 //     }
    
     
-    // Method 2: Bitwise. TC: O(1-bits) SC: O(1)
+    // Method 2: Bitwise. TC: O(logN) SC: O(1)
     double myPow(double x, int n) {
         double res = 1;
         while (n) {

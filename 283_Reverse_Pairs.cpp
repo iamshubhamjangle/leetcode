@@ -21,6 +21,28 @@ https://leetcode.com/problems/reverse-pairs/
 */
 
 
+// // Bruteforce: O(N*N) SC: O(1)
+// class Solution {
+// public:
+//     int reversePairs(vector<int>& nums) {
+//         int n = nums.size();
+//         int count = 0;
+
+//         for(int i=0; i<n; i++) {
+//         	for(int j=i+1; j<n; j++) {
+//         		if((i < j) && (nums[i]*0.5 > nums[j]))
+//         			count++;
+//         	}
+//         }
+
+//         return count;
+//     }
+// };
+
+
+
+// Optimal: Merge Sort
+// TC: O(NlogN + 2N) SC: O(N)
 class Solution {
 public:
 	int merge(vector<int> &nums, int low, int mid, int high) {
@@ -57,20 +79,20 @@ public:
 
 		return count;
 	}
-
+	
 	int mergeSort(vector<int> &nums, int low, int high) {
-		if(low >= high) return 0;
-		int mid = (low + high) / 2;
-		int l = mergeSort(nums, low, mid);
-		int r = mergeSort(nums, mid+1, high);
-
-		int count = l + r + merge(nums, low, mid, high);
-		return count;
+		if(low < high) {
+			int mid = low + (high-low)/2;
+			int l = mergeSort(nums, low, mid);
+			int r = mergeSort(nums, mid+1, high);
+			return l + r + merge(nums, low, mid, high);
+		}
+        return 0;
 	}
 
     int reversePairs(vector<int>& nums) {
-    	int n = nums.size();
-        return mergeSort(nums, 0, n-1);
+    	int n =nums.size();
+    	return mergeSort(nums, 0, n-1);
     }
 };
 
