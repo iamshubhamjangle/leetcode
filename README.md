@@ -247,6 +247,8 @@ sort(meet, meet+n, comparator);
 
 ```cpp
 if(umap.find(num) != um.end()) // number present in unorderedmap
+
+unordered_set<int> s(begin(nums), end(nums));
 ```
 
 <br>
