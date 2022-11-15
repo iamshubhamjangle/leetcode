@@ -7,7 +7,9 @@ git add filename.cpp / git add .
 git commit -a -m ":)"
 git push
 ```
-
+```cpp
+(2^n) can be written in c++ as (1<<n)
+```
 <br>
 <br>
 
@@ -42,6 +44,7 @@ git push
 <br>
 
 ## Important Concepts
+
 
 Sizes
 
