@@ -39,14 +39,14 @@ public:
     ListNode* reverseList1(ListNode* head) {
         if(head == NULL) return NULL;
         
-        ListNode* c = head;
+        ListNode* curr = head;
         ListNode* n = head -> next;
-        ListNode* p = NULL;
+        ListNode* prev= NULL;
         
-        while(c != NULL) {
-            c->next = p;
-            p = c;
-            c = n;
+        while(curr != NULL) {
+            curr->next = prev;
+            prev = curr;
+            curr = n;
             if(n != NULL)
                 n = n -> next;
         }
