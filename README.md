@@ -111,7 +111,7 @@ O(1) [Constant time]: Calculation (eg. Solving linear equations in one unknown)
 
 ```cpp
 vector<int>::iterator lower = lower_bound(v.begin(), v.end(), 6);     // pointer not less than 6
-vector<int>::iterator upper = upper_bound(v.begin(), v.end(), 6);     // pointer greater than 
+vector<int>::iterator upper = upper_bound(v.begin(), v.end(), 6);     // pointer  greater than 6
 ```
 
 <br>
