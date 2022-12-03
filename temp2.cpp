@@ -1,30 +1,42 @@
-/*
-Words_Within_Two_Edits_of_Dictionary.cpp
+// sanju.laitonjam@zycus.com
 
-Input: queries = ["word","note","ants","wood"], dictionary = ["wood","joke","moat"]
-Output: ["word","note","wood"]
-*/
 
-class Solution {
-public:
-	vector<string> twoEditWords(vector<string>& queryy, vector<string>& dictry) {
-        int count = 0;
-        vector<string> ans;
+// "Student":{"Name":"John","Age":"15"},"Class":"10"
+// 3
+// Student.Name Student.Age Class
 
-        for(int i=0; i<queryy.size(); i++){
-            for(int j=0; j<dictry.size(); j++){
-                count = 0;
-                for(int k=0; k<dictry[j].size(); k++){
-                    if(queryy[i][k] != dictry[j][k])
-                        count++;
-                }
-                if(count <= 2){ 
-                    ans.push_back(queryy[i]);
-                    break;
-                }
-            }
-        }
+#include<bits/stdc++.h>
+using namespace std;
 
-        return ans;
+vector<string> solve (string text, int Q, vector<string> queries) {
+   // Write your code here
+   unordered_map<string, string> um;
+
+   for(auto i: text) {
+    if(i == '"') {
+        
     }
-};
+   }
+}
+
+int main() {
+
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    string text;
+    cin >> text;
+    int Q;
+    cin >> Q;
+    vector<string> queries(Q);
+    for(int i_queries = 0; i_queries < Q; i_queries++)
+    {
+        cin >> queries[i_queries];
+    }
+
+    vector<string> out_;
+    out_ = solve(text, Q, queries);
+    for(int i_out_ = 0; i_out_ < out_.size(); i_out_++)
+    {
+        cout << out_[i_out_] << "\n";
+    }
+}
