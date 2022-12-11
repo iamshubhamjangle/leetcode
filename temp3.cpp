@@ -1,43 +1,42 @@
+/*
+Maximum Product of Splitted Binary Tree
+
+https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/description/
+*/
+
+// Observation
+// The easiest way to do this is to check the sum of each subtree and subtract it with total sum of the tree to get sum of both the trees when the current subtree is removed.
+
+static int MOD = 1e9+7;
 class Solution {
 public:
-    int destroyTargets(vector<int>& a, int d) {
-            sort(a.begin(),a.end());
-         map<int,int>m;
-            for(int i=0;i<a.size();i++)
-            {
-                    int x = a[i]/d;
-                    x = a[i]-xd;
-                    if(x==0) x=d;
-                    m[x]++;
+    long long totalTreeSum = 0;
+    long long result = 0;
 
-            }
-            int mx=-1;
-            for(auto i: m)
-            {
-                    if(i.second>mx)
-                            mx = i.second;
-            }
-           set<int>ans;
-            for(auto i : m)
-            {
-                    if(i.second==mx)
-                            ans.insert(i.first);
-            }
-            int mn = INT_MAX;
-             for(int i=0;i<a.size();i++)
-            {
-                    int x = a[i]/d;
-                    x = a[i]-xd;
-                    if(x==0) x=d;
+    void getTotalTreeSum(TreeNode* root) {   //Get total sum of the tree.
+        if(!root) return;
 
-                    if(ans.find(x)!=ans.end())
-                    {
-                            if(mn>a[i])
-                                    mn =a[i];
-                    }
+        totalTreeSum += root->val;
+        getTotalTreeSum(root->left);
+        getTotalTreeSum(root->right);
+    }
 
-            }
+    int SumUnder(TreeNode* root) {             //Get the totalSum under the node `root` including root.
+       if(!root) return 0;
 
-            return(mn);
+       // Get the sum of left and right subtree under node 'root'
+       int sumUnderLeft  = SumUnder(root->left);
+       int sumUnderRight = SumUnder(root->right);
+
+       // Get the max product after making left or right subtrees as seprarate tree.
+       result = max({ result, (totalTreeSum-sumUnderLeft)*sumUnderLeft, (totalTreeSum-sumUnderRight)*sumUnderRight });
+
+       return sumUnderLeft + sumUnderRight + root->val;
+    }
+
+    int maxProduct(TreeNode* root) {
+        getTotalTreeSum(root);
+        SumUnder(root);
+        return result%MOD;
     }
 };
