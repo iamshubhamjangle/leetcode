@@ -1,42 +1,37 @@
-/*
-Maximum Product of Splitted Binary Tree
+#include <bits/stdc++.h>
+using namespace std;
 
-https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/description/
-*/
+int main(){
+    cout << max({1,2,3,4,5}) << endl;
+    cout << max(1,2) << endl;
+}
 
-// Observation
-// The easiest way to do this is to check the sum of each subtree and subtract it with total sum of the tree to get sum of both the trees when the current subtree is removed.
-
-static int MOD = 1e9+7;
-class Solution {
-public:
-    long long totalTreeSum = 0;
-    long long result = 0;
-
-    void getTotalTreeSum(TreeNode* root) {   //Get total sum of the tree.
-        if(!root) return;
-
-        totalTreeSum += root->val;
-        getTotalTreeSum(root->left);
-        getTotalTreeSum(root->right);
+function findMissing(a, b, n, m) {
+    let missing = [];
+    for (let i = 0; i < n; i++) {
+        let j;
+        for (j = 0; j < m; j++) if (a[i] == b[j]) break;
+        if (j == m) missing.push(a[i]); // following was not present in follower
     }
+    return missing;
+}
 
-    int SumUnder(TreeNode* root) {             //Get the totalSum under the node `root` including root.
-       if(!root) return 0;
+const followersNames = [];
+for(let e of document.getElementsByClassName("_ab8y  _ab94 _ab97 _ab9f _ab9k _ab9p _abcm")) followersNames.push(e.innerText);
 
-       // Get the sum of left and right subtree under node 'root'
-       int sumUnderLeft  = SumUnder(root->left);
-       int sumUnderRight = SumUnder(root->right);
+const followingNames = [];
+for(let e of document.getElementsByClassName("_ab8y  _ab94 _ab97 _ab9f _ab9k _ab9p _abcm")) followingNames.push(e.innerText);
 
-       // Get the max product after making left or right subtrees as seprarate tree.
-       result = max({ result, (totalTreeSum-sumUnderLeft)*sumUnderLeft, (totalTreeSum-sumUnderRight)*sumUnderRight });
+console.log(findMissing(followingNames, followersNames, followingNames.length, followersNames.length));
+console.log(findMissing(followersNames, followingNames, followersNames.length, followingNames.length));
 
-       return sumUnderLeft + sumUnderRight + root->val;
-    }
 
-    int maxProduct(TreeNode* root) {
-        getTotalTreeSum(root);
-        SumUnder(root);
-        return result%MOD;
-    }
-};
+
+
+
+// Step 1: Open instagram on laptop/desktop
+// Step 2: Open devtool using ctrl + shift + i
+// Step 3: Open followers list, load complete list and paste this
+function findMissing(l,o,s,a){let n=[];for(let f=0;f<s;f++){let t;for(t=0;t<a&&l[f]!=o[t];t++);t==a&&n.push(l[f])}return n}const followersNames=[];for(let e of document.getElementsByClassName("_ab8y  _ab94 _ab97 _ab9f _ab9k _ab9p _abcm"))followersNames.push(e.innerText);
+// Step 4: Open following list, load complete list and paste this
+const followingNames=[];for(let e of document.getElementsByClassName("_ab8y  _ab94 _ab97 _ab9f _ab9k _ab9p _abcm"))followingNames.push(e.innerText);console.log('People who dont follow you back',findMissing(followingNames,followersNames,followingNames.length,followersNames.length)),console.log('People who follow you, but you dont follow back',findMissing(followersNames,followingNames,followersNames.length,followingNames.length));
