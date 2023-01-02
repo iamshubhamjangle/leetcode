@@ -207,21 +207,17 @@ bool comparator(<T> a, <T> b) {
 **Printing**
 
 ```cpp
-// Print Vector string:
-void print(vector<string> &v) {
-	for(auto i: v) cout << i << ", ";
-	cout << endl;
+// Print vector<T>:
+template<typename T>
+void print(vector<T> &v) {
+  cout << "vector<T> = [";
+  for(int i=0; i<v.size(); i++) { cout << v[i]; if(i<v.size()-1) cout << ","; }
+  cout << "]" << endl;
 }
 
-// Print Vector int:
-void print(vector<int> &v) {
-	for(auto i: v) cout << i << ", ";
-	cout << endl;
-}
-
-// Print vector of vector
-void print(vector<vector<int>> &v) {
-  cout << "[";
+// Print vector<vector<string>>
+void print(vector<vector<string>> &v) {
+  cout << "vector<vector<string>> = [";
   for(auto i: v) { cout << "["; for(auto j: i) cout << j << ","; cout << "]"; }
   cout << "]" << endl;
 }
