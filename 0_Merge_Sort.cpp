@@ -32,28 +32,16 @@ void merge(int arr[], int p, int q, int r) {
   // elements L and M and place them in the correct position at A[p..r]
   while (i < n1 && j < n2) {
     if (L[i] <= M[j]) {
-      arr[k] = L[i];
-      i++;
+      arr[k++] = L[i++];
     } else {
-      arr[k] = M[j];
-      j++;
+      arr[k++] = M[j++];
     }
-    k++;
   }
 
   // When we run out of elements in either L or M,
   // pick up the remaining elements and put in A[p..r]
-  while (i < n1) {
-    arr[k] = L[i];
-    i++;
-    k++;
-  }
-
-  while (j < n2) {
-    arr[k] = M[j];
-    j++;
-    k++;
-  }
+  while (i < n1) arr[k++] = L[i++];
+  while (j < n2) arr[k++] = M[j++];
 }
 
 // Divide the array into two subarrays, sort them and merge them
