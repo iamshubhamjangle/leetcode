@@ -1,23 +1,23 @@
-/*
-Best_time_to_buy_and_sell_stock.cpp
-*/
+#include <bits/stdc++.h>
+using namespace std;
 
-class Solution {
-public:
-    int maxProfit(vector<int>& prices) {
-        int n = prices.size();
-        int minSoFar = INT_MAX;
-        int maxProfit = 0;
+template<typename T>
+void print(vector<T> &v) { cout << "vector<T> = ["; for(int i=0; i<v.size(); i++) { cout << v[i]; if(i<v.size()-1) cout << ","; } cout << "]" << endl; }
 
-        for(auto &n: prices) {
-            if(n < minSoFar) {
-                minSoFar = n;
-            } else {
-                int currProfit = n - minSoFar;
-                maxProfit = max(maxProfit, currProfit);
-            }
-        }
+template<typename T>
+void print(vector<vector<T>> &v) { int n = v.size(); int m = v[0].size(); cout << "vector<vector<T>> = ["; for(int i=0; i<n; i++) { cout << "["; for(int j=0; j<m; j++) {cout << v[i][j]; if(j<m-1) cout << ","; } cout << "]"; } cout << "]" << endl; }
 
-        return maxProfit;
-    }
-};
+
+int main(){
+    // unordered_map<pair<int,int>, int> um;
+    map<pair<int,int>, int> um;
+
+    um[{0,0}]++;
+    um[{0,0}]++;
+    um[{1,1}]++;
+    um[{1,1}]++;
+    um[{1,1}]++;
+    
+    cout << um[{0,0}] << endl;
+    cout << um[{1,1}] << endl;
+}
