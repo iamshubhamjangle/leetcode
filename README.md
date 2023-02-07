@@ -45,6 +45,11 @@ git push
 
 ## Important Concepts
 
+Comparator
+```cpp
+sort(score.begin(), score.end(), [k](vector<int>& a, vector<int>& b) { return a[k] > b[k]; });
+```
+
 
 Sizes
 

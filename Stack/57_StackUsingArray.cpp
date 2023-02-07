@@ -6,7 +6,6 @@ class StackUsingArray {
 	int capacity;	
 
 	public :
-
 	StackUsingArray() {
 		data = new int[4];
 		nextIndex = 0;
@@ -19,15 +18,6 @@ class StackUsingArray {
 	}
 
 	bool isEmpty() {
-		/*
-		if(nextIndex == 0) {
-			return true;
-		}
-		else {
-			return false;
-		}
-		*/
-
 		return nextIndex == 0;
 	}
 
@@ -57,6 +47,7 @@ class StackUsingArray {
 		nextIndex--;
 		return data[nextIndex];
 	}
+	
 	int top() {
 		if(isEmpty()) {
 			cout << "Stack is empty " << endl;
